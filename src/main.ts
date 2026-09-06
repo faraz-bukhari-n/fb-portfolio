@@ -3,7 +3,6 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import 'lenis/dist/lenis.css'
-import 'mapbox-gl/dist/mapbox-gl.css'
 import './styles/base.css'
 
 const app = createApp(App)

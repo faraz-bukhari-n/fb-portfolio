@@ -24,4 +24,21 @@ export default defineConfig({
   optimizeDeps: {
     include: ['three', 'mapbox-gl'],
   },
+  build: {
+    // Mapbox GL and Three.js are larger than Vite’s 500 kB hint; they load only on Home / Experience.
+    chunkSizeWarningLimit: 2000,
+    rolldownOptions: {
+      output: {
+        codeSplitting: {
+          groups: [
+            { name: 'three', test: /node_modules[\\/](?:three|@tresjs)\b/ },
+            { name: 'mapbox', test: /node_modules[\\/]mapbox-gl\b/ },
+            { name: 'd3', test: /node_modules[\\/]d3/ },
+            { name: 'gsap', test: /node_modules[\\/]gsap\b/ },
+            { name: 'markdown', test: /node_modules[\\/](?:markdown-it|dompurify)\b/ },
+          ],
+        },
+      },
+    },
+  },
 })

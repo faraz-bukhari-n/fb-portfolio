@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import ExperienceMap from '@/components/map/ExperienceMap.vue'
 import CareerTimeline from '@/components/viz/CareerTimeline.vue'
 import PageFrame from '@/components/ui/PageFrame.vue'
 import TerminalHeading from '@/components/ui/TerminalHeading.vue'
 import { usePageTitle } from '@/composables/usePageTitle'
 import { experience } from '@/content'
-import { ref } from 'vue'
+import { defineAsyncComponent, ref } from 'vue'
+
+const ExperienceMap = defineAsyncComponent(() => import('@/components/map/ExperienceMap.vue'))
 
 usePageTitle('Experience')
 const activeId = ref(experience[0]?.id ?? '')

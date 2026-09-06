@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import LayerDock from '@/components/map/LayerDock.vue'
 import MapLegend from '@/components/map/MapLegend.vue'
-import PlaygroundMap from '@/components/map/PlaygroundMap.vue'
 import TimeSlider from '@/components/map/TimeSlider.vue'
 import GlowButton from '@/components/ui/GlowButton.vue'
 import { usePageTitle } from '@/composables/usePageTitle'
 import { usePrefersReducedMotion } from '@/composables/usePrefersReducedMotion'
 import { tripDuration } from '@/content/playground-data'
 import type { BasemapId, LayerId } from '@/content/playground-layers'
-import { onMounted, onUnmounted, reactive, ref } from 'vue'
+import { defineAsyncComponent, onMounted, onUnmounted, reactive, ref } from 'vue'
+
+const PlaygroundMap = defineAsyncComponent(() => import('@/components/map/PlaygroundMap.vue'))
 
 usePageTitle('Playground')
 const reduced = usePrefersReducedMotion()

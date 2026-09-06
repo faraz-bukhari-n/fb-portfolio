@@ -2,6 +2,7 @@
 import type { ExperienceRole } from '@/content'
 import mapboxgl, { type GeoJSONSource } from 'mapbox-gl'
 import { onMounted, onUnmounted, ref, watch } from 'vue'
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 const props = defineProps<{
   roles: ExperienceRole[]

@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import HeroScene from '@/components/three/HeroScene.vue'
 import CaseCard from '@/components/ui/CaseCard.vue'
 import GlowButton from '@/components/ui/GlowButton.vue'
 import { usePageTitle } from '@/composables/usePageTitle'
 import { usePrefersReducedMotion } from '@/composables/usePrefersReducedMotion'
 import { featuredProjects, identity } from '@/content'
+import { defineAsyncComponent } from 'vue'
+
+const HeroScene = defineAsyncComponent(() => import('@/components/three/HeroScene.vue'))
 
 usePageTitle('')
 const reduced = usePrefersReducedMotion()
