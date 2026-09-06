@@ -28,7 +28,6 @@ jobs:
         env:
           GITHUB_PAGES: 'true'
           VITE_MAPBOX_TOKEN: ${{ secrets.VITE_MAPBOX_TOKEN }}
-          VITE_CESIUM_TOKEN: ${{ secrets.VITE_CESIUM_TOKEN }}
       - name: SPA fallback
         run: cp dist/index.html dist/404.html
       - uses: actions/upload-pages-artifact@v3

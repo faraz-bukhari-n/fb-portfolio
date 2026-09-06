@@ -38,12 +38,6 @@ const router = createRouter({
       component: () => import('@/views/SkillsView.vue'),
     },
     {
-      path: '/playground',
-      name: 'playground',
-      component: () => import('@/views/PlaygroundView.vue'),
-      meta: { fullBleed: true },
-    },
-    {
       path: '/writing',
       name: 'writing',
       component: () => import('@/views/WritingView.vue'),

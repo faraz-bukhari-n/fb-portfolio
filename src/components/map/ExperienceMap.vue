@@ -93,7 +93,7 @@ onUnmounted(() => {
   <div v-if="token" ref="host" class="experience-map" role="img" aria-label="Map of workplaces" />
   <div v-else class="experience-map experience-map--fallback">
     <p class="kicker">Mapbox</p>
-    <p>Add a <code>VITE_MAPBOX_TOKEN</code> in <code>.env.local</code> to show the workplace map.</p>
+    <!-- <p>Add <code>VITE_MAPBOX_TOKEN</code> in <code>.env.local</code> to show the workplace map.</p> -->
     <ul>
       <li v-for="role in roles" :key="role.id" :class="{ 'is-on': role.id === activeId }">
         {{ role.org }} · {{ role.location }}

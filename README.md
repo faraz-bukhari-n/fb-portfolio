@@ -2,22 +2,20 @@
 
 Personal site for **Faraz Bukhari**, a full-stack developer and tech lead with a WebGIS background. Remote, Spain. Currently at [Lua Group](https://luagroup.com/en/); previously R&D at [Zameen.com](https://www.zameen.com/plotfinder/), where PlotFinder shipped to production.
 
-Vue 3 + TypeScript + Vite. The home hero is a Three.js globe, Experience and Playground use Mapbox, and copy lives in `src/content` — not in the views.
+Vue 3 + TypeScript + Vite. The home hero is a Three.js globe, Experience uses Mapbox, and copy lives in `src/content` — not in the views.
 
 ## Pages
 
-
-| Route         | What it is                                                 |
-| ------------- | ---------------------------------------------------------- |
-| `/`           | Hero globe + featured case studies                         |
-| `/about`      | Origin through Lua Group                                   |
-| `/experience` | Roles on a timeline, pinned on a map                       |
-| `/work`       | Case studies (PlotFinder, drone progress, Cesium listings) |
-| `/skills`     | Zoomable skill graph                                       |
-| `/playground` | Mapbox + deck-style layer lab                              |
-| `/writing`    | Notes                                                      |
-| `/resume`     | Printable CV                                               |
-| `/contact`    | Email and socials                                          |
+| Route | What it is |
+| --- | --- |
+| `/` | Hero globe + featured case studies |
+| `/about` | Origin through Lua Group |
+| `/experience` | Roles on a timeline, pinned on a map |
+| `/work` | Case studies (PlotFinder, drone progress, Cesium listings) |
+| `/skills` | Zoomable skill graph |
+| `/writing` | Notes |
+| `/resume` | Printable CV |
+| `/contact` | Email and socials |
 
 
 
@@ -45,10 +43,9 @@ Copy `.env.example` to `.env.local`:
 
 ```
 VITE_MAPBOX_TOKEN=
-VITE_CESIUM_TOKEN=
 ```
 
-Without a Mapbox token, Experience and Playground maps stay blank. The Cesium token is for Playground 3D. Neither file is committed (`.env.local` is gitignored).
+Without a Mapbox token, the Experience map stays blank. `.env.local` is gitignored.
 
 ## Content
 
@@ -66,7 +63,7 @@ Edit these files instead of hunting through Vue templates:
 
 ## Stack
 
-Vue 3, Vue Router, Vite, TypeScript, Three.js, Mapbox GL, Cesium, D3, GSAP, Lenis.
+Vue 3, Vue Router, Vite, TypeScript, Three.js, Mapbox GL, D3, GSAP, Lenis.
 
 ## Deploy (GitHub Pages)
 
@@ -82,7 +79,7 @@ Subtree only pushes files that exist **in git commits**. The build output is nev
 This repo already deploys with GitHub Actions (`.github/workflows/deploy.yml`) on push to `main`.
 
 1. Repo **Settings → Pages → Source: GitHub Actions**
-2. **Settings → Secrets and variables → Actions** — add `VITE_MAPBOX_TOKEN` (a public `pk.` token) and optionally `VITE_CESIUM_TOKEN`
+2. **Settings → Secrets and variables → Actions** — add `VITE_MAPBOX_TOKEN` (a public `pk.` token)
 3. Commit your latest work and `git push origin main`
 
 Site: [https://faraz-bukhari-n.github.io/fb-portfolio/](https://faraz-bukhari-n.github.io/fb-portfolio/)

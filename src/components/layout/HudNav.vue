@@ -10,7 +10,6 @@ const links = [
   { to: '/experience', label: 'Experience' },
   { to: '/work', label: 'Work' },
   { to: '/skills', label: 'Skills' },
-  { to: '/playground', label: 'Playground' },
   { to: '/writing', label: 'Writing' },
   { to: '/contact', label: 'Contact' },
 ]

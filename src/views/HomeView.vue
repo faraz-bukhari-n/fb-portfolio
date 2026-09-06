@@ -26,7 +26,7 @@ const featured = featuredProjects()
         <p class="home__summary">{{ identity.summary }}</p>
         <div class="home__cta">
           <GlowButton to="/work">Work</GlowButton>
-          <GlowButton to="/playground" variant="magenta">Playground</GlowButton>
+          <GlowButton to="/contact" variant="magenta">Contact</GlowButton>
         </div>
       </div>
     </div>
