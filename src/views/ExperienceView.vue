@@ -1,0 +1,57 @@
+<script setup lang="ts">
+import ExperienceMap from '@/components/map/ExperienceMap.vue'
+import CareerTimeline from '@/components/viz/CareerTimeline.vue'
+import PageFrame from '@/components/ui/PageFrame.vue'
+import TerminalHeading from '@/components/ui/TerminalHeading.vue'
+import { usePageTitle } from '@/composables/usePageTitle'
+import { experience } from '@/content'
+import { ref } from 'vue'
+
+usePageTitle('Experience')
+const activeId = ref(experience[0]?.id ?? '')
+</script>
+
+<template>
+  <PageFrame wide>
+    <TerminalHeading index="02" kicker="log">Experience</TerminalHeading>
+    <div class="experience-grid">
+      <CareerTimeline :roles="experience" @select="activeId = $event" />
+      <div class="experience-grid__map">
+        <p class="kicker">geo · workplaces</p>
+        <ExperienceMap :roles="experience" :active-id="activeId" />
+      </div>
+    </div>
+  </PageFrame>
+</template>
+
+<style scoped>
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  min-width: 0;
+}
+
+.experience-grid__map {
+  order: -1;
+  min-width: 0;
+}
+
+.experience-grid__map .kicker {
+  margin: 0 0 0.7rem;
+}
+
+@media (min-width: 900px) {
+  .experience-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+    gap: 2rem;
+  }
+
+  .experience-grid__map {
+    order: 0;
+    position: sticky;
+    top: calc(var(--nav-h) + 1.2rem);
+  }
+}
+</style>
