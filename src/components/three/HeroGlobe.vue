@@ -6,10 +6,17 @@ import { useMediaQuery } from '@vueuse/core'
 import { Color, PointLight, Vector3 } from 'three'
 import { computed, onUnmounted, shallowRef, watch, watchEffect } from 'vue'
 
+export type GlobeSpin = {
+  y: number
+  x: number
+  vy: number
+  vx: number
+  dragging: boolean
+}
+
 const props = defineProps<{
-  pointerX: number
-  pointerY: number
   reduced: boolean
+  spin: GlobeSpin
 }>()
 
 const { resolved } = useTheme()
@@ -64,13 +71,30 @@ document.addEventListener('visibilitychange', onVis)
 
 onBeforeRender(({ delta, elapsed }) => {
   if (props.reduced) return
-  globe.root.rotation.y += delta * 0.06
+
+  const spin = props.spin
+  if (!spin.dragging) {
+    const damp = Math.exp(-3.6 * delta)
+    spin.vy *= damp
+    spin.vx *= damp
+    if (Math.abs(spin.vy) < 0.002) {
+      spin.y += delta * 0.06
+      spin.vy = 0
+    } else {
+      spin.y += spin.vy
+    }
+    if (Math.abs(spin.vx) < 0.002) {
+      const idle = Math.sin(elapsed * 0.18) * 0.06
+      spin.x += (idle - spin.x) * (1 - Math.exp(-2.4 * delta))
+      spin.vx = 0
+    } else {
+      spin.x = Math.min(0.82, Math.max(-0.82, spin.x + spin.vx))
+    }
+  }
+
+  globe.root.rotation.y = spin.y
+  globe.root.rotation.x = spin.x
   globe.ring.rotation.z = elapsed * 0.04
-  globe.root.rotation.x = Math.sin(elapsed * 0.18) * 0.06
-  warmLight.position.x = 2.4 + props.pointerX * 1.2
-  warmLight.position.y = 1.4 + props.pointerY * 0.9
-  earthLight.position.x = -2.2 + props.pointerX * 0.6
-  earthLight.position.y = -0.4 - props.pointerY * 0.7
 })
 
 onUnmounted(() => {

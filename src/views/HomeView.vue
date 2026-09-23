@@ -78,6 +78,13 @@ const featured = featuredProjects()
   padding: calc(var(--nav-h) + 1.25rem) var(--page-pad) 2rem;
   min-width: 0;
   margin-top: auto;
+  pointer-events: none;
+}
+
+.home__cta,
+.home__cta :deep(a),
+.home__cta :deep(button) {
+  pointer-events: auto;
 }
 
 .home__hud .kicker,
