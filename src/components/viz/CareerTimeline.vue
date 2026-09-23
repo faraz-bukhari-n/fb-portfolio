@@ -1,17 +1,25 @@
 <script setup lang="ts">
 import TagChip from '@/components/ui/TagChip.vue'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import type { ExperienceRole } from '@/content'
 
 const props = defineProps<{
   roles: ExperienceRole[]
+  activeId?: string
 }>()
 
 const emit = defineEmits<{
   select: [id: string]
 }>()
 
-const openId = ref(props.roles[0]?.id ?? '')
+const openId = ref(props.activeId ?? props.roles[0]?.id ?? '')
+
+watch(
+  () => props.activeId,
+  (id) => {
+    if (id) openId.value = id
+  },
+)
 
 function toggle(id: string) {
   openId.value = openId.value === id ? id : id

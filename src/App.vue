@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import AppShell from '@/components/layout/AppShell.vue'
+import { useTheme } from '@/composables/useTheme'
 import { useRoute } from 'vue-router'
 
+useTheme()
 const route = useRoute()
 </script>
 

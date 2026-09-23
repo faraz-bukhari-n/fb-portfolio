@@ -63,8 +63,8 @@ const featured = featuredProjects()
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(243, 238, 230, 0.28) 0%,
-    rgba(243, 238, 230, 0.72) 42%,
+    rgb(var(--bg-rgb) / 0.28) 0%,
+    rgb(var(--bg-rgb) / 0.72) 42%,
     var(--bg) 100%
   );
   /* backdrop-filter: blur(14px); */
@@ -87,7 +87,7 @@ const featured = featuredProjects()
   text-shadow:
     0 0 10px var(--bg),
     0 0 22px var(--bg),
-    0 0 42px rgba(243, 238, 230, 0.95),
+    0 0 42px rgb(var(--bg-rgb) / 0.95),
     1px 0 0 var(--bg),
     -1px 0 0 var(--bg),
     0 1px 0 var(--bg),
@@ -111,7 +111,7 @@ h1 {
 
 .home__summary {
   max-width: 38rem;
-  color: #4a433c;
+  color: var(--muted);
   line-height: 1.65;
   margin: 0.85rem 0 0;
 }
@@ -168,8 +168,8 @@ h1 {
     background: linear-gradient(
       90deg,
       var(--bg) 0%,
-      rgba(243, 238, 230, 0.82) 26%,
-      rgba(243, 238, 230, 0.2) 48%,
+      rgb(var(--bg-rgb) / 0.82) 26%,
+      rgb(var(--bg-rgb) / 0.2) 48%,
       transparent 68%
     );
     backdrop-filter: none;

@@ -245,7 +245,7 @@ watch(
   overflow: hidden;
   border: 1px solid var(--line);
   background:
-    radial-gradient(circle at 50% 50%, rgba(194, 165, 116, 0.12), transparent 55%),
+    radial-gradient(circle at 50% 50%, rgb(var(--ochre-rgb) / 0.12), transparent 55%),
     var(--bg-elev);
   border-radius: var(--radius);
   touch-action: none;
@@ -265,7 +265,7 @@ svg {
 }
 
 .constellation__link {
-  stroke: rgba(79, 93, 67, 0.22);
+  stroke: rgb(var(--olive-rgb) / 0.22);
   pointer-events: none;
 }
 
@@ -316,7 +316,7 @@ svg {
   padding: 0 0.55rem;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
-  background: rgba(251, 248, 242, 0.92);
+  background: rgb(var(--bg-elev-rgb) / 0.92);
   color: var(--text);
   font-family: var(--font-mono);
   font-size: 0.72rem;

@@ -107,10 +107,10 @@ export const skillGroupLabel: Record<SkillGroup, string> = {
 }
 
 export const skillGroupColor: Record<SkillGroup, string> = {
-  fullstack: '#a2653d',
-  webgis: '#4f5d43',
-  leadership: '#c4a574',
-  cloud: '#6d7c62',
+  fullstack: 'var(--skill-fullstack)',
+  webgis: 'var(--skill-webgis)',
+  leadership: 'var(--skill-leadership)',
+  cloud: 'var(--skill-cloud)',
 }
 
 export const categoryLabel: Record<ProjectCategory, string> = {

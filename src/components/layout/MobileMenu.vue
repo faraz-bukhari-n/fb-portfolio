@@ -33,7 +33,7 @@ const emit = defineEmits<{
   position: fixed;
   inset: 0;
   z-index: 60;
-  background: rgba(243, 238, 230, 0.97);
+  background: rgb(var(--bg-rgb) / 0.97);
   padding: calc(var(--nav-h) + 1.5rem) var(--page-pad) 2rem;
   display: flex;
   flex-direction: column;

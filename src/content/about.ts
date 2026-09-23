@@ -38,7 +38,7 @@ export const aboutChapters: AboutChapter[] = [
     index: '05',
     title: 'Now',
     yearLabel: '2021–',
-    location: 'Lua Group · Remote',
-    body: 'In 2021 I joined Lua Group, a Spanish influencer-marketing startup based in Madrid. I work remotely as a full-stack developer and tech lead. The product is their in-house platform for running influencer campaigns — more of that story as I fill it in.',
+    location: 'Ideamappers, Islamabad → Lua Group',
+    body: 'In 2021 I joined through Ideamappers, a Pakistani firm in Islamabad that contracted separately with Lua Group, a Spanish influencer-marketing startup in Madrid. I was full-stack developer and tech lead on their in-house campaign platform. In 2024 that arrangement ended: we switched to individual contractors, I started billing in dollars, and I kept the same seat — remote, now from Spain. More of the product story as I fill it in.',
   },
 ]

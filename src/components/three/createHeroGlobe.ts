@@ -21,10 +21,22 @@ import {
   Vector3,
   type Material,
 } from 'three'
+import type { ResolvedTheme } from '@/composables/useTheme'
 
-const OLIVE = new Color('#4f5d43')
-const EARTH = new Color('#a2653d')
-const PAPER = new Color('#e4d9c8')
+const palettes = {
+  light: {
+    olive: '#4f5d43',
+    earth: '#a2653d',
+    paper: '#e4d9c8',
+    atmosphere: new Color('#c79e6b'),
+  },
+  dark: {
+    olive: '#b4c3a4',
+    earth: '#d49264',
+    paper: '#3a342c',
+    atmosphere: new Color('#d49264'),
+  },
+}
 
 function fibonacciSphere(samples: number) {
   const points: Vector3[] = []
@@ -46,60 +58,58 @@ function disposeMaterial(material: Material | Material[]) {
 export function createHeroGlobe() {
   const root = new Group()
   const radius = 1.55
-
-  const land = new Mesh(
-    new IcosahedronGeometry(radius, 4),
-    new MeshLambertMaterial({
-      color: PAPER,
-      flatShading: true,
-    }),
-  )
+  const landMat = new MeshLambertMaterial({
+    color: palettes.light.paper,
+    flatShading: true,
+  })
+  const land = new Mesh(new IcosahedronGeometry(radius, 4), landMat)
   root.add(land)
 
-  const wire = new Mesh(
-    new IcosahedronGeometry(radius * 1.002, 2),
-    new MeshLambertMaterial({
-      color: OLIVE,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.28,
-    }),
-  )
+  const wireMat = new MeshLambertMaterial({
+    color: palettes.light.olive,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.28,
+  })
+  const wire = new Mesh(new IcosahedronGeometry(radius * 1.002, 2), wireMat)
   root.add(wire)
 
+  const meridianMat = new LineBasicMaterial({
+    color: palettes.light.earth,
+    transparent: true,
+    opacity: 0.28,
+  })
   const meridians = new LineSegments(
     new EdgesGeometry(new IcosahedronGeometry(radius * 1.004, 2)),
-    new LineBasicMaterial({
-      color: EARTH,
-      transparent: true,
-      opacity: 0.28,
-    }),
+    meridianMat,
   )
   root.add(meridians)
 
-  const atmosphere = new Mesh(
-    new SphereGeometry(radius * 1.12, 48, 48),
-    new ShaderMaterial({
-      vertexShader: `
+  const atmosphereMat = new ShaderMaterial({
+    uniforms: {
+      uColor: { value: palettes.light.atmosphere.clone() },
+    },
+    vertexShader: `
         varying vec3 vNormal;
         void main() {
           vNormal = normalize(normalMatrix * normal);
           gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
         }
       `,
-      fragmentShader: `
+    fragmentShader: `
+        uniform vec3 uColor;
         varying vec3 vNormal;
         void main() {
           float intensity = pow(0.7 - dot(vNormal, vec3(0.0, 0.0, 1.0)), 3.2);
-          gl_FragColor = vec4(0.78, 0.62, 0.42, 1.0) * intensity;
+          gl_FragColor = vec4(uColor, 1.0) * intensity;
         }
       `,
-      blending: AdditiveBlending,
-      side: BackSide,
-      transparent: true,
-      depthWrite: false,
-    }),
-  )
+    blending: AdditiveBlending,
+    side: BackSide,
+    transparent: true,
+    depthWrite: false,
+  })
+  const atmosphere = new Mesh(new SphereGeometry(radius * 1.12, 48, 48), atmosphereMat)
   root.add(atmosphere)
 
   const samples = fibonacciSphere(900)
@@ -111,21 +121,19 @@ export function createHeroGlobe() {
   })
   const cloudGeom = new BufferGeometry()
   cloudGeom.setAttribute('position', new Float32BufferAttribute(positions, 3))
-  const cloud = new Points(
-    cloudGeom,
-    new PointsMaterial({
-      color: OLIVE,
-      size: 0.016,
-      transparent: true,
-      opacity: 0.45,
-      depthWrite: false,
-    }),
-  )
+  const cloudMat = new PointsMaterial({
+    color: palettes.light.olive,
+    size: 0.016,
+    transparent: true,
+    opacity: 0.45,
+    depthWrite: false,
+  })
+  const cloud = new Points(cloudGeom, cloudMat)
   root.add(cloud)
 
   const cityCount = 280
   const box = new BoxGeometry(0.018, 0.018, 0.09)
-  const cityMat = new MeshLambertMaterial({ color: OLIVE })
+  const cityMat = new MeshLambertMaterial({ color: palettes.light.olive })
   const cities = new InstancedMesh(box, cityMat, cityCount)
   const dummy = new Object3D()
   const color = new Color()
@@ -138,24 +146,41 @@ export function createHeroGlobe() {
     dummy.scale.set(1, 1, height)
     dummy.updateMatrix()
     cities.setMatrixAt(i, dummy.matrix)
-    color.copy(i % 3 === 0 ? EARTH : OLIVE)
+    color.set(i % 3 === 0 ? palettes.light.earth : palettes.light.olive)
     cities.setColorAt(i, color)
   })
   cities.instanceMatrix.needsUpdate = true
   if (cities.instanceColor) cities.instanceColor.needsUpdate = true
   root.add(cities)
 
+  const ringMat = new MeshLambertMaterial({
+    color: palettes.light.earth,
+    transparent: true,
+    opacity: 0.32,
+    wireframe: true,
+  })
   const ring = new Mesh(
     new SphereGeometry(radius * 1.45, 64, 12, 0, Math.PI * 2, Math.PI / 2 - 0.04, 0.08),
-    new MeshLambertMaterial({
-      color: EARTH,
-      transparent: true,
-      opacity: 0.32,
-      wireframe: true,
-    }),
+    ringMat,
   )
   ring.rotation.x = 0.35
   root.add(ring)
+
+  function applyTheme(theme: ResolvedTheme) {
+    const palette = palettes[theme]
+    landMat.color.set(palette.paper)
+    wireMat.color.set(palette.olive)
+    meridianMat.color.set(palette.earth)
+    atmosphereMat.uniforms.uColor.value.copy(palette.atmosphere)
+    cloudMat.color.set(palette.olive)
+    cityMat.color.set(palette.olive)
+    ringMat.color.set(palette.earth)
+    cityPoints.forEach((_, i) => {
+      color.set(i % 3 === 0 ? palette.earth : palette.olive)
+      cities.setColorAt(i, color)
+    })
+    if (cities.instanceColor) cities.instanceColor.needsUpdate = true
+  }
 
   const dispose = () => {
     root.traverse((child) => {
@@ -166,5 +191,5 @@ export function createHeroGlobe() {
     })
   }
 
-  return { root, ring, dispose }
+  return { root, ring, dispose, applyTheme }
 }

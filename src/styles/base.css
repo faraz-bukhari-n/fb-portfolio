@@ -1,20 +1,4 @@
 :root {
-  --bg: #f3eee6;
-  --bg-elev: #fbf8f2;
-  --bg-elev-2: #ece6db;
-  --olive: #4f5d43;
-  --earth: #a2653d;
-  --ochre: #c4a574;
-  --cyan: #4f5d43;
-  --magenta: #a2653d;
-  --amber: #c4a574;
-  --mint: #6d7c62;
-  --text: #2c2723;
-  --muted: #6e665d;
-  --line: rgba(44, 39, 35, 0.12);
-  --line-strong: rgba(44, 39, 35, 0.28);
-  --glow-cyan: 0 18px 40px rgba(44, 39, 35, 0.08);
-  --glow-magenta: 0 18px 40px rgba(162, 101, 61, 0.1);
   --font-serif: 'Fraunces', 'Times New Roman', serif;
   --font-sans: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
@@ -22,6 +6,67 @@
   --nav-h: 60px;
   --page-pad: 1.1rem;
   --radius: 12px;
+}
+
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f3eee6;
+  --bg-rgb: 243 238 230;
+  --bg-elev: #fbf8f2;
+  --bg-elev-rgb: 251 248 242;
+  --bg-elev-2: #ece6db;
+  --olive: #4f5d43;
+  --olive-rgb: 79 93 67;
+  --earth: #a2653d;
+  --ochre: #c4a574;
+  --ochre-rgb: 196 165 116;
+  --cyan: #4f5d43;
+  --magenta: #a2653d;
+  --amber: #c4a574;
+  --mint: #6d7c62;
+  --text: #2c2723;
+  --text-rgb: 44 39 35;
+  --muted: #6e665d;
+  --line: rgb(var(--text-rgb) / 0.12);
+  --line-strong: rgb(var(--text-rgb) / 0.28);
+  --glow-cyan: 0 18px 40px rgb(var(--text-rgb) / 0.08);
+  --glow-magenta: 0 18px 40px rgb(162 101 61 / 0.1);
+  --page-glow: rgb(255 255 255 / 0.7);
+  --skill-fullstack: #a2653d;
+  --skill-webgis: #4f5d43;
+  --skill-leadership: #c4a574;
+  --skill-cloud: #6d7c62;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #161410;
+  --bg-rgb: 22 20 16;
+  --bg-elev: #1f1c18;
+  --bg-elev-rgb: 31 28 24;
+  --bg-elev-2: #2c2720;
+  --olive: #b4c3a4;
+  --olive-rgb: 180 195 164;
+  --earth: #d49264;
+  --ochre: #d4b896;
+  --ochre-rgb: 212 184 150;
+  --cyan: #b4c3a4;
+  --magenta: #d49264;
+  --amber: #d4b896;
+  --mint: #8fa080;
+  --text: #efe8dc;
+  --text-rgb: 239 232 220;
+  --muted: #a89f93;
+  --line: rgb(var(--text-rgb) / 0.12);
+  --line-strong: rgb(var(--text-rgb) / 0.28);
+  --glow-cyan: 0 18px 40px rgb(0 0 0 / 0.38);
+  --glow-magenta: 0 18px 40px rgb(212 146 100 / 0.14);
+  --page-glow: rgb(255 255 255 / 0.05);
+  --skill-fullstack: #d49264;
+  --skill-webgis: #b4c3a4;
+  --skill-leadership: #d4b896;
+  --skill-cloud: #8fa080;
 }
 
 *,
@@ -88,7 +133,7 @@ button {
 }
 
 ::selection {
-  background: rgba(162, 101, 61, 0.22);
+  background: rgb(162 101 61 / 0.22);
   color: var(--text);
 }
 
@@ -110,7 +155,7 @@ button {
 
 .page-grid {
   background:
-    radial-gradient(ellipse at 20% 0%, rgba(255, 255, 255, 0.7), transparent 46%),
+    radial-gradient(ellipse at 20% 0%, var(--page-glow), transparent 46%),
     var(--bg);
 }
 

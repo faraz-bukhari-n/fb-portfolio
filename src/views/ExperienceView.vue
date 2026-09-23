@@ -16,10 +16,11 @@ const activeId = ref(experience[0]?.id ?? '')
   <PageFrame wide>
     <TerminalHeading index="02" kicker="log">Experience</TerminalHeading>
     <div class="experience-grid">
-      <CareerTimeline :roles="experience" @select="activeId = $event" />
+      <CareerTimeline :roles="experience" :active-id="activeId" @select="activeId = $event" />
       <div class="experience-grid__map">
         <p class="kicker">geo · workplaces</p>
-        <ExperienceMap :roles="experience" :active-id="activeId" />
+        <p class="map-hint">Drag to pan · scroll to zoom · click a pin</p>
+        <ExperienceMap :roles="experience" :active-id="activeId" @select="activeId = $event" />
       </div>
     </div>
   </PageFrame>
@@ -40,7 +41,13 @@ const activeId = ref(experience[0]?.id ?? '')
 }
 
 .experience-grid__map .kicker {
+  margin: 0 0 0.35rem;
+}
+
+.map-hint {
   margin: 0 0 0.7rem;
+  color: var(--muted);
+  font-size: 0.82rem;
 }
 
 @media (min-width: 900px) {

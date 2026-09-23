@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { identity } from '@/content'
 import MobileMenu from './MobileMenu.vue'
+import ThemeToggle from './ThemeToggle.vue'
 import { onKeyStroke, useMediaQuery } from '@vueuse/core'
 import { computed, ref, watch } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
@@ -55,6 +56,7 @@ onKeyStroke('Escape', () => {
     </nav>
 
     <div class="hud-nav__end">
+      <ThemeToggle />
       <RouterLink class="hud-nav__resume" :to="identity.resumePath">Resume</RouterLink>
       <button
         v-if="isMobile"
@@ -86,12 +88,12 @@ onKeyStroke('Escape', () => {
   gap: 0.75rem;
   padding: 0 var(--page-pad);
   border-bottom: 1px solid var(--line);
-  background: rgba(243, 238, 230, 0.78);
+  background: rgb(var(--bg-rgb) / 0.78);
   backdrop-filter: blur(16px);
 }
 
 .hud-nav--home {
-  background: linear-gradient(to bottom, rgba(243, 238, 230, 0.86), transparent);
+  background: linear-gradient(to bottom, rgb(var(--bg-rgb) / 0.86), transparent);
   border-bottom-color: transparent;
 }
 

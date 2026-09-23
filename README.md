@@ -1,6 +1,6 @@
 # Faraz Bukhari — portfolio
 
-Personal site for **Faraz Bukhari**, a full-stack developer and tech lead with a WebGIS background. Remote, Spain. Currently at [Lua Group](https://luagroup.com/en/); previously R&D at [Zameen.com](https://www.zameen.com/plotfinder/), where PlotFinder shipped to production.
+Personal site for **Faraz Bukhari**, a full-stack developer and tech lead with a WebGIS background. Remote, Spain. Independent contractor at [Lua Group](https://luagroup.com/en/) since 2024; before that the same product through Ideamappers (2021–2024), and R&D at [Zameen.com](https://www.zameen.com/plotfinder/), where PlotFinder shipped to production.
 
 Vue 3 + TypeScript + Vite. The home hero is a Three.js globe, Experience uses Mapbox, and copy lives in `src/content` — not in the views.
 
@@ -53,7 +53,7 @@ Edit these files instead of hunting through Vue templates:
 
 - `src/content/identity.ts` — name, role, summary, email, socials
 - `src/content/education.ts` — NUST
-- `src/content/experience.ts` — Lua Group, Zameen
+- `src/content/experience.ts` — Lua Group, Ideamappers, Zameen
 - `src/content/projects.ts` — case studies
 - `src/content/skills.ts` — constellation nodes
 - `src/content/about.ts` — About chapters
