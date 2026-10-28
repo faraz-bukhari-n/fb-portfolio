@@ -15,7 +15,7 @@ const compact = useMediaQuery('(max-width: 719px)')
 const cameraPos = computed(() =>
   compact.value ? new Vector3(0, 0.12, 4.6) : new Vector3(-0.55, 0.28, 4.2),
 )
-const clearColor = computed(() => (resolved.value === 'dark' ? '#161410' : '#f3eee6'))
+const clearColor = computed(() => (resolved.value === 'dark' ? '#140c0f' : '#fbf6f3'))
 const spin = reactive<GlobeSpin>({
   y: 0,
   x: 0,
@@ -164,7 +164,7 @@ function onPointerUp(event: PointerEvent) {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 72% 48%, rgb(var(--ochre-rgb) / 0.28), transparent 42%),
+    radial-gradient(circle at 72% 48%, rgb(var(--cyan-rgb) / 0.22), transparent 42%),
     radial-gradient(circle at 78% 55%, rgb(var(--olive-rgb) / 0.16), transparent 38%),
     var(--bg);
 }

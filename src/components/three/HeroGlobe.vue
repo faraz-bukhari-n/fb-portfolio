@@ -22,14 +22,14 @@ const props = defineProps<{
 const { resolved } = useTheme()
 const globe = createHeroGlobe()
 const root = shallowRef(globe.root)
-const warmLight = new PointLight(new Color('#f6efe4'), 3.2, 14)
+const warmLight = new PointLight(new Color('#f6ebef'), 3.2, 14)
 warmLight.position.set(2.4, 1.4, 2.4)
-const earthLight = new PointLight(new Color('#a2653d'), 1.6, 12)
+const earthLight = new PointLight(new Color('#8b2e4a'), 1.6, 12)
 earthLight.position.set(-2.2, -0.4, 1.6)
 const dirPos = new Vector3(3, 4, 2)
-const ambientColor = computed(() => (resolved.value === 'dark' ? '#2a241c' : '#f6efe4'))
+const ambientColor = computed(() => (resolved.value === 'dark' ? '#1e1216' : '#f6ebef'))
 const ambientIntensity = computed(() => (resolved.value === 'dark' ? 0.42 : 0.72))
-const dirColor = computed(() => (resolved.value === 'dark' ? '#c4b8a8' : '#fff6ea'))
+const dirColor = computed(() => (resolved.value === 'dark' ? '#e8eef6' : '#ffffff'))
 const dirIntensity = computed(() => (resolved.value === 'dark' ? 0.7 : 1.1))
 
 const { camera, renderer } = useTres()
@@ -41,16 +41,16 @@ watch(
   resolved,
   (theme) => {
     globe.applyTheme(theme)
-    renderer?.setClearColor(theme === 'dark' ? '#161410' : '#f3eee6')
+    renderer?.setClearColor(theme === 'dark' ? '#140c0f' : '#fbf6f3')
     if (theme === 'dark') {
-      warmLight.color.set('#c4b49a')
+      warmLight.color.set('#5eead4')
       warmLight.intensity = 1.7
-      earthLight.color.set('#d49264')
+      earthLight.color.set('#e8a0b4')
       earthLight.intensity = 1.15
     } else {
-      warmLight.color.set('#f6efe4')
+      warmLight.color.set('#f6ebef')
       warmLight.intensity = 3.2
-      earthLight.color.set('#a2653d')
+      earthLight.color.set('#0e7c7b')
       earthLight.intensity = 1.6
     }
   },

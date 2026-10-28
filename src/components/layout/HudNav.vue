@@ -4,18 +4,28 @@ import MobileMenu from './MobileMenu.vue'
 import ThemeToggle from './ThemeToggle.vue'
 import { onKeyStroke, useMediaQuery } from '@vueuse/core'
 import { computed, ref, watch } from 'vue'
-import { RouterLink, useRoute } from 'vue-router'
-
-const links = [
-  { to: '/about', label: 'About' },
-  { to: '/experience', label: 'Experience' },
-  { to: '/work', label: 'Work' },
-  { to: '/skills', label: 'Skills' },
-  { to: '/writing', label: 'Writing' },
-  { to: '/contact', label: 'Contact' },
-]
+import { RouterLink, useRoute, useRouter } from 'vue-router'
+import type { RouteLocationRaw } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
+const links: { id: string; to: RouteLocationRaw; label: string; index: string }[] = [
+  { id: 'work', to: '/work', label: 'Work', index: '01' },
+  { id: 'experience', to: '/experience', label: 'Experience', index: '02' },
+  { id: 'skills', to: { name: 'home', hash: '#skills' }, label: 'Skills', index: '03' },
+]
+
+function isActive(id: string, to: RouteLocationRaw) {
+  if (id === 'skills') return route.path === '/' && route.hash === '#skills'
+  const path = typeof to === 'string' ? to : 'path' in to ? to.path : ''
+  return Boolean(path && (route.path === path || route.path.startsWith(`${path}/`)))
+}
+
+async function go(event: Event, to: RouteLocationRaw) {
+  event.preventDefault()
+  open.value = false
+  await router.push(to)
+}
 const open = ref(false)
 const isMobile = useMediaQuery('(max-width: 860px)')
 const onHome = computed(() => Boolean(route.meta.fullBleed))
@@ -46,11 +56,13 @@ onKeyStroke('Escape', () => {
     <nav v-if="!isMobile" class="hud-nav__links" aria-label="Primary">
       <RouterLink
         v-for="link in links"
-        :key="link.to"
+        :key="link.id"
         :to="link.to"
         class="hud-nav__link"
-        active-class="is-active"
+        :class="{ 'is-active': isActive(link.id, link.to) }"
+        @click="go($event, link.to)"
       >
+        <span>{{ link.index }}</span>
         {{ link.label }}
       </RouterLink>
     </nav>
@@ -88,8 +100,8 @@ onKeyStroke('Escape', () => {
   gap: 0.75rem;
   padding: 0 var(--page-pad);
   border-bottom: 1px solid var(--line);
-  background: rgb(var(--bg-rgb) / 0.78);
-  backdrop-filter: blur(16px);
+  background: rgb(var(--bg-rgb) / 0.72);
+  backdrop-filter: blur(22px);
 }
 
 .hud-nav--home {
@@ -105,13 +117,14 @@ onKeyStroke('Escape', () => {
 }
 
 .hud-nav__mark {
-  font-family: var(--font-serif);
-  font-size: 1.05rem;
-  letter-spacing: 0.04em;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: var(--olive);
   border: 1px solid var(--olive);
-  border-radius: 8px;
-  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  padding: 0.18rem 0.48rem;
   flex-shrink: 0;
 }
 
@@ -131,12 +144,21 @@ onKeyStroke('Escape', () => {
 }
 
 .hud-nav__link {
-  font-family: var(--font-sans);
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 0.4rem 0.55rem;
   color: var(--muted);
+}
+
+.hud-nav__link span {
+  color: var(--olive);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
 }
 
 .hud-nav__link:hover,
@@ -152,22 +174,23 @@ onKeyStroke('Escape', () => {
 }
 
 .hud-nav__resume {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--earth);
-  border: 1px solid var(--earth);
-  border-radius: 999px;
-  padding: 0.32rem 0.65rem;
+  color: var(--olive);
+  border: 1px solid var(--olive);
+  border-radius: var(--radius-sm);
+  padding: 0.34rem 0.65rem;
   white-space: nowrap;
   transition:
-    background 0.4s var(--ease),
-    color 0.4s var(--ease);
+    background 0.35s var(--ease),
+    color 0.35s var(--ease);
 }
 
 .hud-nav__resume:hover {
-  background: var(--earth);
+  background: var(--cyan);
+  border-color: var(--cyan);
   color: var(--bg);
 }
 

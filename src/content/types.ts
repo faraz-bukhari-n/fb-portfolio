@@ -11,6 +11,7 @@ export type Identity = {
   role: string
   location: string
   email: string
+  phone?: string
   availability: string
   summary: string
   resumePath: string
@@ -36,6 +37,12 @@ export type Education = {
   honors?: string
   gpa?: string
   focus: string[]
+}
+
+export type Certification = {
+  id: string
+  org: string
+  label: string
 }
 
 export type ExperienceRole = {
@@ -77,7 +84,7 @@ export type Project = {
   lat?: number
 }
 
-export type SkillGroup = 'fullstack' | 'webgis' | 'leadership' | 'cloud'
+export type SkillGroup = 'fullstack' | 'webgis' | 'leadership' | 'cloud' | 'ai'
 
 export type Skill = {
   id: string
@@ -104,6 +111,7 @@ export const skillGroupLabel: Record<SkillGroup, string> = {
   webgis: 'WebGIS',
   leadership: 'Leadership',
   cloud: 'Cloud / DevEx',
+  ai: 'AI',
 }
 
 export const skillGroupColor: Record<SkillGroup, string> = {
@@ -111,6 +119,7 @@ export const skillGroupColor: Record<SkillGroup, string> = {
   webgis: 'var(--skill-webgis)',
   leadership: 'var(--skill-leadership)',
   cloud: 'var(--skill-cloud)',
+  ai: 'var(--skill-ai)',
 }
 
 export const categoryLabel: Record<ProjectCategory, string> = {

@@ -10,8 +10,9 @@ usePageTitle('Writing')
 
 <template>
   <PageFrame>
-    <TerminalHeading index="05" kicker="log">Writing</TerminalHeading>
-    <div class="writing-list">
+    <TerminalHeading index="05" kicker="$ ls ~/writing">Writing</TerminalHeading>
+    <p v-if="!articles.length" class="empty">No essays published yet.</p>
+    <div v-else class="writing-list">
       <RouterLink v-for="article in articles" :key="article.slug" :to="`/writing/${article.slug}`" class="article-card">
         <p class="kicker">{{ article.date }}</p>
         <h2>{{ article.title }}</h2>
@@ -25,6 +26,11 @@ usePageTitle('Writing')
 </template>
 
 <style scoped>
+.empty {
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+
 .writing-list {
   display: grid;
   gap: 0.85rem;

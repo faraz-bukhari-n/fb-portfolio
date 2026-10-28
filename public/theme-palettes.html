@@ -1,0 +1,1061 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Theme palettes — Faraz Bukhari</title>
+  <style>
+    :root { font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #111; color: #eee; }
+    .page { max-width: 1180px; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+    h1 { margin: 0 0 0.4rem; font-size: 1.8rem; }
+    .lede { color: #9aa3ad; max-width: 42rem; line-height: 1.5; }
+    nav { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.4rem 0 2rem; }
+    nav a { color: #c9d2dc; font-size: 0.82rem; padding: 0.28rem 0.6rem; border: 1px solid #333; border-radius: 999px; text-decoration: none; }
+    nav a:hover { border-color: #888; }
+    h1 + .lede + nav + h2, .grid + h2 { margin-top: 2.2rem; }
+    h2.section { font-size: 1.1rem; letter-spacing: 0.12em; text-transform: uppercase; color: #9aa3ad; }
+    .grid { display: grid; gap: 1.4rem; }
+    @media (min-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
+    .card { border: 1px solid; border-radius: 18px; padding: 1.1rem; }
+    .kicker { margin: 0; font-family: ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.12em; }
+    .card h2 { margin: 0.2rem 0 0.35rem; font-size: 1.25rem; }
+    .vibe { margin: 0 0 0.9rem; font-size: 0.88rem; line-height: 1.4; }
+    .mock { border: 1px solid; border-radius: 12px; padding: 1rem 1.1rem 1.15rem; }
+    .pill { display: inline-block; font-family: ui-monospace, monospace; font-size: 0.62rem; letter-spacing: 0.1em; padding: 0.22rem 0.55rem; border: 1px solid; border-radius: 999px; }
+    .hello { margin: 0.7rem 0 0; font-size: 0.95rem; }
+    .name { margin: 0; font-size: 1.7rem; font-weight: 700; letter-spacing: -0.04em; }
+    .role { margin: 0.25rem 0 0.85rem; font-family: ui-monospace, monospace; font-size: 0.78rem; }
+    .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; min-height: 2.1rem; padding: 0.35rem 0.85rem; border-radius: 8px; font-size: 0.82rem; font-weight: 600; }
+    .btn.ghost { border: 1px solid; }
+    .chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.45rem; margin-top: 0.9rem; }
+    .chip { display: grid; gap: 0.12rem; }
+    .chip__swatch { display: block; height: 28px; border-radius: 6px; border: 1px solid; }
+    .chip__label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.8; }
+    .chip code { font-size: 0.68rem; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>Theme palettes — set 2</h1>
+    <p class="lede">The first set was all cool SaaS (zinc, navy, GitHub blue). These are different on purpose: cream paper, forest, lime, wine, clay, steel. Pick one light ID and one dark ID. The live portfolio will not change until you choose.</p>
+    <nav>
+      <a href="#light-a">Light A</a><a href="#light-b">Light B</a><a href="#light-c">Light C</a><a href="#light-d">Light D</a><a href="#light-e">Light E</a><a href="#light-f">Light F</a><a href="#light-g">Light G</a><a href="#light-h">Light H</a><a href="#dark-a">Dark A</a><a href="#dark-b">Dark B</a><a href="#dark-c">Dark C</a><a href="#dark-d">Dark D</a><a href="#dark-e">Dark E</a><a href="#dark-f">Dark F</a><a href="#dark-g">Dark G</a><a href="#dark-h">Dark H</a>
+    </nav>
+    <h2 class="section">Light</h2>
+    <div class="grid">
+      <article class="card" id="light-a" style="background:#F4F3EB;color:#16151A;border-color:#DDD8C8">
+        <header class="card__head">
+          <p class="kicker" style="color:#6A15FF">Light A</p>
+          <h2>Cream + electric indigo</h2>
+          <p class="vibe" style="color:#6F6B62">Warm paper, one loud indigo. Editorial, not a dashboard. Pair with Dark A.</p>
+        </header>
+        <div class="mock" style="background:#FFFEF8;border-color:#DDD8C8">
+          <span class="pill" style="color:#6A15FF;border-color:#6A15FF;background:#EBE8DC">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#16151A">Hello I'm</p>
+          <p class="name" style="color:#6A15FF">Faraz Bukhari</p>
+          <p class="role" style="color:#4C1D95">&lt;SeniorFullStack /&gt; <span style="color:#6F6B62">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#6A15FF;color:#F4F3EB">Download Resume</span>
+            <span class="btn ghost" style="border-color:#DDD8C8;color:#16151A;background:#EBE8DC">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F4F3EB;border-color:#DDD8C8"></span>
+              <span class="chip__label">bg</span>
+              <code>#F4F3EB</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#FFFEF8;border-color:#DDD8C8"></span>
+              <span class="chip__label">elev</span>
+              <code>#FFFEF8</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#EBE8DC;border-color:#DDD8C8"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#EBE8DC</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#16151A;border-color:#DDD8C8"></span>
+              <span class="chip__label">text</span>
+              <code>#16151A</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#6F6B62;border-color:#DDD8C8"></span>
+              <span class="chip__label">muted</span>
+              <code>#6F6B62</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#DDD8C8;border-color:#DDD8C8"></span>
+              <span class="chip__label">line</span>
+              <code>#DDD8C8</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#6A15FF;border-color:#DDD8C8"></span>
+              <span class="chip__label">primary</span>
+              <code>#6A15FF</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#4C1D95;border-color:#DDD8C8"></span>
+              <span class="chip__label">accent</span>
+              <code>#4C1D95</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F4F3EB;border-color:#DDD8C8"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#F4F3EB</code>
+            </div></div>
+      </article>
+      <article class="card" id="light-b" style="background:#F3EEE7;color:#1A1914;border-color:#D9D0C4">
+        <header class="card__head">
+          <p class="kicker" style="color:#154734">Light B</p>
+          <h2>Bone + forest</h2>
+          <p class="vibe" style="color:#6B6458">Cartographic. Deep green on warm bone, no traffic-light green. Pair with Dark B.</p>
+        </header>
+        <div class="mock" style="background:#FFFBF6;border-color:#D9D0C4">
+          <span class="pill" style="color:#154734;border-color:#154734;background:#E8E0D4">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#1A1914">Hello I'm</p>
+          <p class="name" style="color:#154734">Faraz Bukhari</p>
+          <p class="role" style="color:#1F6B4A">&lt;SeniorFullStack /&gt; <span style="color:#6B6458">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#154734;color:#F3EEE7">Download Resume</span>
+            <span class="btn ghost" style="border-color:#D9D0C4;color:#1A1914;background:#E8E0D4">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F3EEE7;border-color:#D9D0C4"></span>
+              <span class="chip__label">bg</span>
+              <code>#F3EEE7</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#FFFBF6;border-color:#D9D0C4"></span>
+              <span class="chip__label">elev</span>
+              <code>#FFFBF6</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#E8E0D4;border-color:#D9D0C4"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#E8E0D4</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#1A1914;border-color:#D9D0C4"></span>
+              <span class="chip__label">text</span>
+              <code>#1A1914</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#6B6458;border-color:#D9D0C4"></span>
+              <span class="chip__label">muted</span>
+              <code>#6B6458</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#D9D0C4;border-color:#D9D0C4"></span>
+              <span class="chip__label">line</span>
+              <code>#D9D0C4</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#154734;border-color:#D9D0C4"></span>
+              <span class="chip__label">primary</span>
+              <code>#154734</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#1F6B4A;border-color:#D9D0C4"></span>
+              <span class="chip__label">accent</span>
+              <code>#1F6B4A</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F3EEE7;border-color:#D9D0C4"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#F3EEE7</code>
+            </div></div>
+      </article>
+      <article class="card" id="light-c" style="background:#F2F1EC;color:#141412;border-color:#D5D4CB">
+        <header class="card__head">
+          <p class="kicker" style="color:#141412">Light C</p>
+          <h2>Fog + lime</h2>
+          <p class="vibe" style="color:#6A6A60">Brutalist poster. Black type, lime as the only punch. Pair with Dark B.</p>
+        </header>
+        <div class="mock" style="background:#FFFFFF;border-color:#D5D4CB">
+          <span class="pill" style="color:#141412;border-color:#141412;background:#E7E6DF">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#141412">Hello I'm</p>
+          <p class="name" style="color:#141412">Faraz Bukhari</p>
+          <p class="role" style="color:#4A5200">&lt;SeniorFullStack /&gt; <span style="color:#6A6A60">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#C8F000;color:#141412">Download Resume</span>
+            <span class="btn ghost" style="border-color:#D5D4CB;color:#141412;background:#E7E6DF">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F2F1EC;border-color:#D5D4CB"></span>
+              <span class="chip__label">bg</span>
+              <code>#F2F1EC</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#FFFFFF;border-color:#D5D4CB"></span>
+              <span class="chip__label">elev</span>
+              <code>#FFFFFF</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#E7E6DF;border-color:#D5D4CB"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#E7E6DF</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#141412;border-color:#D5D4CB"></span>
+              <span class="chip__label">text</span>
+              <code>#141412</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#6A6A60;border-color:#D5D4CB"></span>
+              <span class="chip__label">muted</span>
+              <code>#6A6A60</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#D5D4CB;border-color:#D5D4CB"></span>
+              <span class="chip__label">line</span>
+              <code>#D5D4CB</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#C8F000;border-color:#D5D4CB"></span>
+              <span class="chip__label">primary</span>
+              <code>#C8F000</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#4A5200;border-color:#D5D4CB"></span>
+              <span class="chip__label">accent</span>
+              <code>#4A5200</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#141412;border-color:#D5D4CB"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#141412</code>
+            </div></div>
+      </article>
+      <article class="card" id="light-d" style="background:#EDE9E1;color:#1C1915;border-color:#D2CCC2">
+        <header class="card__head">
+          <p class="kicker" style="color:#0B5F73">Light D</p>
+          <h2>Stone + lake</h2>
+          <p class="vibe" style="color:#6A645C">Survey map. Warm stone, deep lake blue — not cyan pop. Pair with Dark D.</p>
+        </header>
+        <div class="mock" style="background:#F7F4EE;border-color:#D2CCC2">
+          <span class="pill" style="color:#0B5F73;border-color:#0B5F73;background:#E0DBD2">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#1C1915">Hello I'm</p>
+          <p class="name" style="color:#0B5F73">Faraz Bukhari</p>
+          <p class="role" style="color:#0E7A8C">&lt;SeniorFullStack /&gt; <span style="color:#6A645C">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#0B5F73;color:#F7F4EE">Download Resume</span>
+            <span class="btn ghost" style="border-color:#D2CCC2;color:#1C1915;background:#E0DBD2">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#EDE9E1;border-color:#D2CCC2"></span>
+              <span class="chip__label">bg</span>
+              <code>#EDE9E1</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F7F4EE;border-color:#D2CCC2"></span>
+              <span class="chip__label">elev</span>
+              <code>#F7F4EE</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#E0DBD2;border-color:#D2CCC2"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#E0DBD2</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#1C1915;border-color:#D2CCC2"></span>
+              <span class="chip__label">text</span>
+              <code>#1C1915</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#6A645C;border-color:#D2CCC2"></span>
+              <span class="chip__label">muted</span>
+              <code>#6A645C</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#D2CCC2;border-color:#D2CCC2"></span>
+              <span class="chip__label">line</span>
+              <code>#D2CCC2</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#0B5F73;border-color:#D2CCC2"></span>
+              <span class="chip__label">primary</span>
+              <code>#0B5F73</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#0E7A8C;border-color:#D2CCC2"></span>
+              <span class="chip__label">accent</span>
+              <code>#0E7A8C</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F7F4EE;border-color:#D2CCC2"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#F7F4EE</code>
+            </div></div>
+      </article>
+      <article class="card" id="light-e" style="background:#FBF6F3;color:#1C1214;border-color:#E8D9D5">
+        <header class="card__head">
+          <p class="kicker" style="color:#6B1D36">Light E</p>
+          <h2>Porcelain + wine</h2>
+          <p class="vibe" style="color:#7A6568">Quiet luxury. Burgundy, not traffic-light red, not orange. Pair with Dark E.</p>
+        </header>
+        <div class="mock" style="background:#FFFFFF;border-color:#E8D9D5">
+          <span class="pill" style="color:#6B1D36;border-color:#6B1D36;background:#F1E8E4">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#1C1214">Hello I'm</p>
+          <p class="name" style="color:#6B1D36">Faraz Bukhari</p>
+          <p class="role" style="color:#8B2E4A">&lt;SeniorFullStack /&gt; <span style="color:#7A6568">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#6B1D36;color:#FBF6F3">Download Resume</span>
+            <span class="btn ghost" style="border-color:#E8D9D5;color:#1C1214;background:#F1E8E4">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#FBF6F3;border-color:#E8D9D5"></span>
+              <span class="chip__label">bg</span>
+              <code>#FBF6F3</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#FFFFFF;border-color:#E8D9D5"></span>
+              <span class="chip__label">elev</span>
+              <code>#FFFFFF</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F1E8E4;border-color:#E8D9D5"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#F1E8E4</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#1C1214;border-color:#E8D9D5"></span>
+              <span class="chip__label">text</span>
+              <code>#1C1214</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#7A6568;border-color:#E8D9D5"></span>
+              <span class="chip__label">muted</span>
+              <code>#7A6568</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#E8D9D5;border-color:#E8D9D5"></span>
+              <span class="chip__label">line</span>
+              <code>#E8D9D5</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#6B1D36;border-color:#E8D9D5"></span>
+              <span class="chip__label">primary</span>
+              <code>#6B1D36</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#8B2E4A;border-color:#E8D9D5"></span>
+              <span class="chip__label">accent</span>
+              <code>#8B2E4A</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#FBF6F3;border-color:#E8D9D5"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#FBF6F3</code>
+            </div></div>
+      </article>
+      <article class="card" id="light-f" style="background:#E8E0D4;color:#1A1612;border-color:#CFC4B4">
+        <header class="card__head">
+          <p class="kicker" style="color:#2A2770">Light F</p>
+          <h2>Clay + indigo ink</h2>
+          <p class="vibe" style="color:#6E665C">Studio clay. Warm ground, ink-indigo type and buttons. Pair with Dark F.</p>
+        </header>
+        <div class="mock" style="background:#F4EEE4;border-color:#CFC4B4">
+          <span class="pill" style="color:#2A2770;border-color:#2A2770;background:#DDD4C6">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#1A1612">Hello I'm</p>
+          <p class="name" style="color:#2A2770">Faraz Bukhari</p>
+          <p class="role" style="color:#3D3A8C">&lt;SeniorFullStack /&gt; <span style="color:#6E665C">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#2A2770;color:#F4EEE4">Download Resume</span>
+            <span class="btn ghost" style="border-color:#CFC4B4;color:#1A1612;background:#DDD4C6">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#E8E0D4;border-color:#CFC4B4"></span>
+              <span class="chip__label">bg</span>
+              <code>#E8E0D4</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F4EEE4;border-color:#CFC4B4"></span>
+              <span class="chip__label">elev</span>
+              <code>#F4EEE4</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#DDD4C6;border-color:#CFC4B4"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#DDD4C6</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#1A1612;border-color:#CFC4B4"></span>
+              <span class="chip__label">text</span>
+              <code>#1A1612</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#6E665C;border-color:#CFC4B4"></span>
+              <span class="chip__label">muted</span>
+              <code>#6E665C</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#CFC4B4;border-color:#CFC4B4"></span>
+              <span class="chip__label">line</span>
+              <code>#CFC4B4</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#2A2770;border-color:#CFC4B4"></span>
+              <span class="chip__label">primary</span>
+              <code>#2A2770</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#3D3A8C;border-color:#CFC4B4"></span>
+              <span class="chip__label">accent</span>
+              <code>#3D3A8C</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F4EEE4;border-color:#CFC4B4"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#F4EEE4</code>
+            </div></div>
+      </article>
+      <article class="card" id="light-g" style="background:#E7F2EE;color:#0B1F2A;border-color:#C5D9D3">
+        <header class="card__head">
+          <p class="kicker" style="color:#0B1F2A">Light G</p>
+          <h2>Mint wash + navy</h2>
+          <p class="vibe" style="color:#4E6A70">Tinted page, not white. Navy does the work. Pair with Dark G.</p>
+        </header>
+        <div class="mock" style="background:#F7FBFA;border-color:#C5D9D3">
+          <span class="pill" style="color:#0B1F2A;border-color:#0B1F2A;background:#D5E8E2">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#0B1F2A">Hello I'm</p>
+          <p class="name" style="color:#0B1F2A">Faraz Bukhari</p>
+          <p class="role" style="color:#0F6E5C">&lt;SeniorFullStack /&gt; <span style="color:#4E6A70">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#0B1F2A;color:#E7F2EE">Download Resume</span>
+            <span class="btn ghost" style="border-color:#C5D9D3;color:#0B1F2A;background:#D5E8E2">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#E7F2EE;border-color:#C5D9D3"></span>
+              <span class="chip__label">bg</span>
+              <code>#E7F2EE</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F7FBFA;border-color:#C5D9D3"></span>
+              <span class="chip__label">elev</span>
+              <code>#F7FBFA</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#D5E8E2;border-color:#C5D9D3"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#D5E8E2</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#0B1F2A;border-color:#C5D9D3"></span>
+              <span class="chip__label">text</span>
+              <code>#0B1F2A</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#4E6A70;border-color:#C5D9D3"></span>
+              <span class="chip__label">muted</span>
+              <code>#4E6A70</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#C5D9D3;border-color:#C5D9D3"></span>
+              <span class="chip__label">line</span>
+              <code>#C5D9D3</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#0B1F2A;border-color:#C5D9D3"></span>
+              <span class="chip__label">primary</span>
+              <code>#0B1F2A</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#0F6E5C;border-color:#C5D9D3"></span>
+              <span class="chip__label">accent</span>
+              <code>#0F6E5C</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#E7F2EE;border-color:#C5D9D3"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#E7F2EE</code>
+            </div></div>
+      </article>
+      <article class="card" id="light-h" style="background:#F1EBE3;color:#1A1814;border-color:#D4CBC0">
+        <header class="card__head">
+          <p class="kicker" style="color:#2F4454">Light H</p>
+          <h2>Sand + steel</h2>
+          <p class="vibe" style="color:#6B655C">Instrument panel. Warm sand, cool steel grey-blue. Pair with Dark H.</p>
+        </header>
+        <div class="mock" style="background:#FAF7F2;border-color:#D4CBC0">
+          <span class="pill" style="color:#2F4454;border-color:#2F4454;background:#E5DDD3">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#1A1814">Hello I'm</p>
+          <p class="name" style="color:#2F4454">Faraz Bukhari</p>
+          <p class="role" style="color:#3D5A6E">&lt;SeniorFullStack /&gt; <span style="color:#6B655C">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#2F4454;color:#FAF7F2">Download Resume</span>
+            <span class="btn ghost" style="border-color:#D4CBC0;color:#1A1814;background:#E5DDD3">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F1EBE3;border-color:#D4CBC0"></span>
+              <span class="chip__label">bg</span>
+              <code>#F1EBE3</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#FAF7F2;border-color:#D4CBC0"></span>
+              <span class="chip__label">elev</span>
+              <code>#FAF7F2</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#E5DDD3;border-color:#D4CBC0"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#E5DDD3</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#1A1814;border-color:#D4CBC0"></span>
+              <span class="chip__label">text</span>
+              <code>#1A1814</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#6B655C;border-color:#D4CBC0"></span>
+              <span class="chip__label">muted</span>
+              <code>#6B655C</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#D4CBC0;border-color:#D4CBC0"></span>
+              <span class="chip__label">line</span>
+              <code>#D4CBC0</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#2F4454;border-color:#D4CBC0"></span>
+              <span class="chip__label">primary</span>
+              <code>#2F4454</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#3D5A6E;border-color:#D4CBC0"></span>
+              <span class="chip__label">accent</span>
+              <code>#3D5A6E</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#FAF7F2;border-color:#D4CBC0"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#FAF7F2</code>
+            </div></div>
+      </article></div>
+    <h2 class="section">Dark</h2>
+    <div class="grid">
+      <article class="card" id="dark-a" style="background:#12100E;color:#F4F1EA;border-color:#322E28">
+        <header class="card__head">
+          <p class="kicker" style="color:#8B7CFF">Dark A</p>
+          <h2>Warm black + indigo</h2>
+          <p class="vibe" style="color:#9A9488">Brown-black canvas, electric indigo. Not cool navy. Pair with Light A.</p>
+        </header>
+        <div class="mock" style="background:#1C1916;border-color:#322E28">
+          <span class="pill" style="color:#8B7CFF;border-color:#8B7CFF;background:#26221E">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#F4F1EA">Hello I'm</p>
+          <p class="name" style="color:#8B7CFF">Faraz Bukhari</p>
+          <p class="role" style="color:#A99BFF">&lt;SeniorFullStack /&gt; <span style="color:#9A9488">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#8B7CFF;color:#12100E">Download Resume</span>
+            <span class="btn ghost" style="border-color:#322E28;color:#F4F1EA;background:#26221E">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#12100E;border-color:#322E28"></span>
+              <span class="chip__label">bg</span>
+              <code>#12100E</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#1C1916;border-color:#322E28"></span>
+              <span class="chip__label">elev</span>
+              <code>#1C1916</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#26221E;border-color:#322E28"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#26221E</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F4F1EA;border-color:#322E28"></span>
+              <span class="chip__label">text</span>
+              <code>#F4F1EA</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#9A9488;border-color:#322E28"></span>
+              <span class="chip__label">muted</span>
+              <code>#9A9488</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#322E28;border-color:#322E28"></span>
+              <span class="chip__label">line</span>
+              <code>#322E28</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#8B7CFF;border-color:#322E28"></span>
+              <span class="chip__label">primary</span>
+              <code>#8B7CFF</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#A99BFF;border-color:#322E28"></span>
+              <span class="chip__label">accent</span>
+              <code>#A99BFF</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#12100E;border-color:#322E28"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#12100E</code>
+            </div></div>
+      </article>
+      <article class="card" id="dark-b" style="background:#12140E;color:#EEF2E4;border-color:#32361F">
+        <header class="card__head">
+          <p class="kicker" style="color:#EEF2E4">Dark B</p>
+          <h2>Olive night + lime</h2>
+          <p class="vibe" style="color:#9AA18A">Terminal, but green-black. Lime is the only light. Pair with Light C.</p>
+        </header>
+        <div class="mock" style="background:#1A1D14;border-color:#32361F">
+          <span class="pill" style="color:#EEF2E4;border-color:#EEF2E4;background:#24281A">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#EEF2E4">Hello I'm</p>
+          <p class="name" style="color:#EEF2E4">Faraz Bukhari</p>
+          <p class="role" style="color:#D4FF6B">&lt;SeniorFullStack /&gt; <span style="color:#9AA18A">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#C6F542;color:#12140E">Download Resume</span>
+            <span class="btn ghost" style="border-color:#32361F;color:#EEF2E4;background:#24281A">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#12140E;border-color:#32361F"></span>
+              <span class="chip__label">bg</span>
+              <code>#12140E</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#1A1D14;border-color:#32361F"></span>
+              <span class="chip__label">elev</span>
+              <code>#1A1D14</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#24281A;border-color:#32361F"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#24281A</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#EEF2E4;border-color:#32361F"></span>
+              <span class="chip__label">text</span>
+              <code>#EEF2E4</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#9AA18A;border-color:#32361F"></span>
+              <span class="chip__label">muted</span>
+              <code>#9AA18A</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#32361F;border-color:#32361F"></span>
+              <span class="chip__label">line</span>
+              <code>#32361F</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#C6F542;border-color:#32361F"></span>
+              <span class="chip__label">primary</span>
+              <code>#C6F542</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#D4FF6B;border-color:#32361F"></span>
+              <span class="chip__label">accent</span>
+              <code>#D4FF6B</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#12140E;border-color:#32361F"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#12140E</code>
+            </div></div>
+      </article>
+      <article class="card" id="dark-c" style="background:#0B0B0C;color:#F4F3EB;border-color:#2C2C2E">
+        <header class="card__head">
+          <p class="kicker" style="color:#F4F3EB">Dark C</p>
+          <h2>Bone on black</h2>
+          <p class="vibe" style="color:#9A9990">Ivory buttons on true black. Indigo only as a link. Pair with Light A.</p>
+        </header>
+        <div class="mock" style="background:#161617;border-color:#2C2C2E">
+          <span class="pill" style="color:#F4F3EB;border-color:#F4F3EB;background:#202022">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#F4F3EB">Hello I'm</p>
+          <p class="name" style="color:#F4F3EB">Faraz Bukhari</p>
+          <p class="role" style="color:#8B7CFF">&lt;SeniorFullStack /&gt; <span style="color:#9A9990">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#F4F3EB;color:#0B0B0C">Download Resume</span>
+            <span class="btn ghost" style="border-color:#2C2C2E;color:#F4F3EB;background:#202022">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#0B0B0C;border-color:#2C2C2E"></span>
+              <span class="chip__label">bg</span>
+              <code>#0B0B0C</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#161617;border-color:#2C2C2E"></span>
+              <span class="chip__label">elev</span>
+              <code>#161617</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#202022;border-color:#2C2C2E"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#202022</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F4F3EB;border-color:#2C2C2E"></span>
+              <span class="chip__label">text</span>
+              <code>#F4F3EB</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#9A9990;border-color:#2C2C2E"></span>
+              <span class="chip__label">muted</span>
+              <code>#9A9990</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#2C2C2E;border-color:#2C2C2E"></span>
+              <span class="chip__label">line</span>
+              <code>#2C2C2E</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F4F3EB;border-color:#2C2C2E"></span>
+              <span class="chip__label">primary</span>
+              <code>#F4F3EB</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#8B7CFF;border-color:#2C2C2E"></span>
+              <span class="chip__label">accent</span>
+              <code>#8B7CFF</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#0B0B0C;border-color:#2C2C2E"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#0B0B0C</code>
+            </div></div>
+      </article>
+      <article class="card" id="dark-d" style="background:#061614;color:#E4F4F0;border-color:#1A3C36">
+        <header class="card__head">
+          <p class="kicker" style="color:#E4F4F0">Dark D</p>
+          <h2>Tide</h2>
+          <p class="vibe" style="color:#7EA8A0">Green-black water, not slate-navy. One sea-glass accent. Pair with Light D.</p>
+        </header>
+        <div class="mock" style="background:#0C221E;border-color:#1A3C36">
+          <span class="pill" style="color:#E4F4F0;border-color:#E4F4F0;background:#14302B">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#E4F4F0">Hello I'm</p>
+          <p class="name" style="color:#E4F4F0">Faraz Bukhari</p>
+          <p class="role" style="color:#8BEEC8">&lt;SeniorFullStack /&gt; <span style="color:#7EA8A0">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#5FE3C0;color:#061614">Download Resume</span>
+            <span class="btn ghost" style="border-color:#1A3C36;color:#E4F4F0;background:#14302B">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#061614;border-color:#1A3C36"></span>
+              <span class="chip__label">bg</span>
+              <code>#061614</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#0C221E;border-color:#1A3C36"></span>
+              <span class="chip__label">elev</span>
+              <code>#0C221E</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#14302B;border-color:#1A3C36"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#14302B</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#E4F4F0;border-color:#1A3C36"></span>
+              <span class="chip__label">text</span>
+              <code>#E4F4F0</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#7EA8A0;border-color:#1A3C36"></span>
+              <span class="chip__label">muted</span>
+              <code>#7EA8A0</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#1A3C36;border-color:#1A3C36"></span>
+              <span class="chip__label">line</span>
+              <code>#1A3C36</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#5FE3C0;border-color:#1A3C36"></span>
+              <span class="chip__label">primary</span>
+              <code>#5FE3C0</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#8BEEC8;border-color:#1A3C36"></span>
+              <span class="chip__label">accent</span>
+              <code>#8BEEC8</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#061614;border-color:#1A3C36"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#061614</code>
+            </div></div>
+      </article>
+      <article class="card" id="dark-e" style="background:#140C0F;color:#F6EBEF;border-color:#3A242C">
+        <header class="card__head">
+          <p class="kicker" style="color:#F6EBEF">Dark E</p>
+          <h2>Wine night</h2>
+          <p class="vibe" style="color:#B09098">Plum black, dusty rose. Not coral, not orange. Pair with Light E.</p>
+        </header>
+        <div class="mock" style="background:#1E1216;border-color:#3A242C">
+          <span class="pill" style="color:#F6EBEF;border-color:#F6EBEF;background:#2A1A20">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#F6EBEF">Hello I'm</p>
+          <p class="name" style="color:#F6EBEF">Faraz Bukhari</p>
+          <p class="role" style="color:#F0C4D0">&lt;SeniorFullStack /&gt; <span style="color:#B09098">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#E8A0B4;color:#140C0F">Download Resume</span>
+            <span class="btn ghost" style="border-color:#3A242C;color:#F6EBEF;background:#2A1A20">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#140C0F;border-color:#3A242C"></span>
+              <span class="chip__label">bg</span>
+              <code>#140C0F</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#1E1216;border-color:#3A242C"></span>
+              <span class="chip__label">elev</span>
+              <code>#1E1216</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#2A1A20;border-color:#3A242C"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#2A1A20</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F6EBEF;border-color:#3A242C"></span>
+              <span class="chip__label">text</span>
+              <code>#F6EBEF</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#B09098;border-color:#3A242C"></span>
+              <span class="chip__label">muted</span>
+              <code>#B09098</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#3A242C;border-color:#3A242C"></span>
+              <span class="chip__label">line</span>
+              <code>#3A242C</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#E8A0B4;border-color:#3A242C"></span>
+              <span class="chip__label">primary</span>
+              <code>#E8A0B4</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F0C4D0;border-color:#3A242C"></span>
+              <span class="chip__label">accent</span>
+              <code>#F0C4D0</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#140C0F;border-color:#3A242C"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#140C0F</code>
+            </div></div>
+      </article>
+      <article class="card" id="dark-f" style="background:#140E1C;color:#F0E8FF;border-color:#342646">
+        <header class="card__head">
+          <p class="kicker" style="color:#F0E8FF">Dark F</p>
+          <h2>Eggplant</h2>
+          <p class="vibe" style="color:#A090B8">Violet-black studio. Lilac type, no cyan. Pair with Light F.</p>
+        </header>
+        <div class="mock" style="background:#1C1428;border-color:#342646">
+          <span class="pill" style="color:#F0E8FF;border-color:#F0E8FF;background:#281C36">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#F0E8FF">Hello I'm</p>
+          <p class="name" style="color:#F0E8FF">Faraz Bukhari</p>
+          <p class="role" style="color:#DDD6FE">&lt;SeniorFullStack /&gt; <span style="color:#A090B8">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#C4B5FD;color:#140E1C">Download Resume</span>
+            <span class="btn ghost" style="border-color:#342646;color:#F0E8FF;background:#281C36">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#140E1C;border-color:#342646"></span>
+              <span class="chip__label">bg</span>
+              <code>#140E1C</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#1C1428;border-color:#342646"></span>
+              <span class="chip__label">elev</span>
+              <code>#1C1428</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#281C36;border-color:#342646"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#281C36</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#F0E8FF;border-color:#342646"></span>
+              <span class="chip__label">text</span>
+              <code>#F0E8FF</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#A090B8;border-color:#342646"></span>
+              <span class="chip__label">muted</span>
+              <code>#A090B8</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#342646;border-color:#342646"></span>
+              <span class="chip__label">line</span>
+              <code>#342646</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#C4B5FD;border-color:#342646"></span>
+              <span class="chip__label">primary</span>
+              <code>#C4B5FD</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#DDD6FE;border-color:#342646"></span>
+              <span class="chip__label">accent</span>
+              <code>#DDD6FE</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#140E1C;border-color:#342646"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#140E1C</code>
+            </div></div>
+      </article>
+      <article class="card" id="dark-g" style="background:#0E1610;color:#E6F4EA;border-color:#24362C">
+        <header class="card__head">
+          <p class="kicker" style="color:#E6F4EA">Dark G</p>
+          <h2>Forest dim</h2>
+          <p class="vibe" style="color:#8AAD94">Night canopy. Soft mint on deep green-black. Pair with Light B or Light G.</p>
+        </header>
+        <div class="mock" style="background:#15201A;border-color:#24362C">
+          <span class="pill" style="color:#E6F4EA;border-color:#E6F4EA;background:#1C2A22">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#E6F4EA">Hello I'm</p>
+          <p class="name" style="color:#E6F4EA">Faraz Bukhari</p>
+          <p class="role" style="color:#B4F0C8">&lt;SeniorFullStack /&gt; <span style="color:#8AAD94">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#8BE0A8;color:#0E1610">Download Resume</span>
+            <span class="btn ghost" style="border-color:#24362C;color:#E6F4EA;background:#1C2A22">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#0E1610;border-color:#24362C"></span>
+              <span class="chip__label">bg</span>
+              <code>#0E1610</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#15201A;border-color:#24362C"></span>
+              <span class="chip__label">elev</span>
+              <code>#15201A</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#1C2A22;border-color:#24362C"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#1C2A22</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#E6F4EA;border-color:#24362C"></span>
+              <span class="chip__label">text</span>
+              <code>#E6F4EA</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#8AAD94;border-color:#24362C"></span>
+              <span class="chip__label">muted</span>
+              <code>#8AAD94</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#24362C;border-color:#24362C"></span>
+              <span class="chip__label">line</span>
+              <code>#24362C</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#8BE0A8;border-color:#24362C"></span>
+              <span class="chip__label">primary</span>
+              <code>#8BE0A8</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#B4F0C8;border-color:#24362C"></span>
+              <span class="chip__label">accent</span>
+              <code>#B4F0C8</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#0E1610;border-color:#24362C"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#0E1610</code>
+            </div></div>
+      </article>
+      <article class="card" id="dark-h" style="background:#101418;color:#E6EEF2;border-color:#2A343C">
+        <header class="card__head">
+          <p class="kicker" style="color:#E6EEF2">Dark H</p>
+          <h2>Steel night</h2>
+          <p class="vibe" style="color:#8A9AA6">Instrument grey. Cool metal, no neon. Pair with Light H.</p>
+        </header>
+        <div class="mock" style="background:#181E24;border-color:#2A343C">
+          <span class="pill" style="color:#E6EEF2;border-color:#E6EEF2;background:#222A32">SYSTEM.KERNEL :: ONLINE</span>
+          <p class="hello" style="color:#E6EEF2">Hello I'm</p>
+          <p class="name" style="color:#E6EEF2">Faraz Bukhari</p>
+          <p class="role" style="color:#B4D0DC">&lt;SeniorFullStack /&gt; <span style="color:#8A9AA6">// Team Lead · WebGIS</span></p>
+          <div class="actions">
+            <span class="btn" style="background:#8FB4C8;color:#101418">Download Resume</span>
+            <span class="btn ghost" style="border-color:#2A343C;color:#E6EEF2;background:#222A32">GitHub</span>
+          </div>
+        </div>
+        <div class="chips">
+            <div class="chip">
+              <span class="chip__swatch" style="background:#101418;border-color:#2A343C"></span>
+              <span class="chip__label">bg</span>
+              <code>#101418</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#181E24;border-color:#2A343C"></span>
+              <span class="chip__label">elev</span>
+              <code>#181E24</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#222A32;border-color:#2A343C"></span>
+              <span class="chip__label">elev-2</span>
+              <code>#222A32</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#E6EEF2;border-color:#2A343C"></span>
+              <span class="chip__label">text</span>
+              <code>#E6EEF2</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#8A9AA6;border-color:#2A343C"></span>
+              <span class="chip__label">muted</span>
+              <code>#8A9AA6</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#2A343C;border-color:#2A343C"></span>
+              <span class="chip__label">line</span>
+              <code>#2A343C</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#8FB4C8;border-color:#2A343C"></span>
+              <span class="chip__label">primary</span>
+              <code>#8FB4C8</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#B4D0DC;border-color:#2A343C"></span>
+              <span class="chip__label">accent</span>
+              <code>#B4D0DC</code>
+            </div>
+            <div class="chip">
+              <span class="chip__swatch" style="background:#101418;border-color:#2A343C"></span>
+              <span class="chip__label">on-primary</span>
+              <code>#101418</code>
+            </div></div>
+      </article></div>
+  </div>
+</body>
+</html>

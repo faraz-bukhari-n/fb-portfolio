@@ -117,6 +117,7 @@ section p {
   align-items: center;
   gap: 0.55rem;
   border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
   padding: 0.7rem 0.9rem;
   background: var(--bg-elev);
 }

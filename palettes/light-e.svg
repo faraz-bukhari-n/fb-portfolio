@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="220" viewBox="0 0 720 220" role="img" aria-label="Light E preview">
+  <rect width="720" height="220" rx="16" fill="#FBF6F3" stroke="#E8D9D5"/>
+  <rect x="16" y="16" width="688" height="188" rx="12" fill="#FFFFFF" stroke="#E8D9D5"/>
+  <text x="32" y="44" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="700" fill="#6B1D36">Light E — Porcelain + wine</text>
+  
+        <rect x="24" y="58" width="64" height="40" rx="6" fill="#FBF6F3" stroke="#E8D9D5"/>
+        <text x="56" y="114" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#7A6568">bg</text>
+        <text x="56" y="128" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#1C1214">#FBF6F3</text>
+        <rect x="100" y="58" width="64" height="40" rx="6" fill="#FFFFFF" stroke="#E8D9D5"/>
+        <text x="132" y="114" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#7A6568">elev</text>
+        <text x="132" y="128" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#1C1214">#FFFFFF</text>
+        <rect x="176" y="58" width="64" height="40" rx="6" fill="#F1E8E4" stroke="#E8D9D5"/>
+        <text x="208" y="114" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#7A6568">elev-2</text>
+        <text x="208" y="128" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#1C1214">#F1E8E4</text>
+        <rect x="252" y="58" width="64" height="40" rx="6" fill="#1C1214" stroke="#E8D9D5"/>
+        <text x="284" y="114" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#7A6568">text</text>
+        <text x="284" y="128" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#1C1214">#1C1214</text>
+        <rect x="328" y="58" width="64" height="40" rx="6" fill="#7A6568" stroke="#E8D9D5"/>
+        <text x="360" y="114" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#7A6568">muted</text>
+        <text x="360" y="128" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#1C1214">#7A6568</text>
+        <rect x="404" y="58" width="64" height="40" rx="6" fill="#E8D9D5" stroke="#E8D9D5"/>
+        <text x="436" y="114" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#7A6568">line</text>
+        <text x="436" y="128" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#1C1214">#E8D9D5</text>
+        <rect x="480" y="58" width="64" height="40" rx="6" fill="#6B1D36" stroke="#E8D9D5"/>
+        <text x="512" y="114" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#7A6568">primary</text>
+        <text x="512" y="128" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#1C1214">#6B1D36</text>
+        <rect x="556" y="58" width="64" height="40" rx="6" fill="#8B2E4A" stroke="#E8D9D5"/>
+        <text x="588" y="114" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#7A6568">accent</text>
+        <text x="588" y="128" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#1C1214">#8B2E4A</text>
+        <rect x="632" y="58" width="64" height="40" rx="6" fill="#FBF6F3" stroke="#E8D9D5"/>
+        <text x="664" y="114" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="9" fill="#7A6568">on-primary</text>
+        <text x="664" y="128" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#1C1214">#FBF6F3</text>
+  <rect x="32" y="150" width="120" height="36" rx="8" fill="#6B1D36"/>
+  <text x="92" y="172" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" fill="#FBF6F3">Primary</text>
+  <text x="168" y="172" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#8B2E4A">Accent link</text>
+  <text x="280" y="172" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#7A6568">Muted copy</text>
+</svg>

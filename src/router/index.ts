@@ -2,7 +2,19 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  scrollBehavior() {
+  scrollBehavior(to) {
+    if (to.hash) {
+      return new Promise((resolve) => {
+        const tryScroll = (attempt = 0) => {
+          if (document.querySelector(to.hash) || attempt > 24) {
+            resolve({ el: to.hash, top: 72 })
+            return
+          }
+          requestAnimationFrame(() => tryScroll(attempt + 1))
+        }
+        tryScroll()
+      })
+    }
     return { top: 0 }
   },
   routes: [
@@ -10,7 +22,6 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: () => import('@/views/HomeView.vue'),
-      meta: { fullBleed: true },
     },
     {
       path: '/about',
@@ -34,8 +45,7 @@ const router = createRouter({
     },
     {
       path: '/skills',
-      name: 'skills',
-      component: () => import('@/views/SkillsView.vue'),
+      redirect: { path: '/', hash: '#skills' },
     },
     {
       path: '/writing',
@@ -49,8 +59,7 @@ const router = createRouter({
     },
     {
       path: '/contact',
-      name: 'contact',
-      component: () => import('@/views/ContactView.vue'),
+      redirect: { path: '/', hash: '#contact' },
     },
     {
       path: '/resume',

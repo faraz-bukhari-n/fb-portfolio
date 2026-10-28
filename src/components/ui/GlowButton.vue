@@ -38,19 +38,22 @@ const classes = computed(() => ['glow-btn', `glow-btn--${props.variant}`])
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.05rem;
+  padding: 0.72rem 1.15rem;
   border: 1px solid var(--text);
-  border-radius: 999px;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  border-radius: 8px;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   text-align: center;
   white-space: nowrap;
   transition:
-    background 0.45s var(--ease),
-    color 0.45s var(--ease),
-    border-color 0.45s var(--ease),
-    transform 0.45s var(--ease);
+    background 0.35s var(--ease),
+    color 0.35s var(--ease),
+    border-color 0.35s var(--ease),
+    box-shadow 0.35s var(--ease),
+    transform 0.35s var(--ease);
 }
 
 .glow-btn:hover {
@@ -63,8 +66,10 @@ const classes = computed(() => ['glow-btn', `glow-btn--${props.variant}`])
 }
 
 .glow-btn--solid:hover {
-  background: var(--olive);
-  border-color: var(--olive);
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--bg);
+  box-shadow: var(--glow-cyan);
 }
 
 .glow-btn--ghost {
@@ -78,13 +83,13 @@ const classes = computed(() => ['glow-btn', `glow-btn--${props.variant}`])
 }
 
 .glow-btn--magenta {
-  border-color: var(--earth);
-  color: var(--earth);
+  border-color: var(--magenta);
+  color: var(--magenta);
   background: transparent;
 }
 
 .glow-btn--magenta:hover {
-  background: var(--earth);
+  background: var(--magenta);
   color: var(--bg);
 }
 </style>

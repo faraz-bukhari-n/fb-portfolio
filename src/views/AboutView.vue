@@ -10,7 +10,7 @@ usePageTitle('About')
 
 <template>
   <PageFrame>
-    <TerminalHeading index="01" kicker="dossier">About</TerminalHeading>
+    <TerminalHeading index="01" kicker="$ whoami">About</TerminalHeading>
     <p class="lede">{{ identity.summary }}</p>
     <AboutChapters :chapters="aboutChapters" />
   </PageFrame>

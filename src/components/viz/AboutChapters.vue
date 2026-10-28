@@ -99,8 +99,7 @@ onUnmounted(() => {
 }
 
 .about-chapter {
-  min-height: 58vh;
-  padding: 1rem 0 3rem;
+  padding: 0.4rem 0 1.6rem;
   border-bottom: 1px solid var(--line);
 }
 

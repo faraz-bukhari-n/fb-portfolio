@@ -25,16 +25,18 @@ import type { ResolvedTheme } from '@/composables/useTheme'
 
 const palettes = {
   light: {
-    olive: '#4f5d43',
-    earth: '#a2653d',
-    paper: '#e4d9c8',
-    atmosphere: new Color('#c79e6b'),
+    olive: '#6b1d36',
+    earth: '#8b2e4a',
+    cyan: '#0e7c7b',
+    paper: '#f1e8e4',
+    atmosphere: new Color('#0e7c7b'),
   },
   dark: {
-    olive: '#b4c3a4',
-    earth: '#d49264',
-    paper: '#3a342c',
-    atmosphere: new Color('#d49264'),
+    olive: '#e8a0b4',
+    earth: '#f0c4d0',
+    cyan: '#5eead4',
+    paper: '#2a1a20',
+    atmosphere: new Color('#5eead4'),
   },
 }
 
@@ -146,7 +148,7 @@ export function createHeroGlobe() {
     dummy.scale.set(1, 1, height)
     dummy.updateMatrix()
     cities.setMatrixAt(i, dummy.matrix)
-    color.set(i % 3 === 0 ? palettes.light.earth : palettes.light.olive)
+    color.set(i % 3 === 0 ? palettes.light.earth : i % 3 === 1 ? palettes.light.cyan : palettes.light.olive)
     cities.setColorAt(i, color)
   })
   cities.instanceMatrix.needsUpdate = true
@@ -176,7 +178,7 @@ export function createHeroGlobe() {
     cityMat.color.set(palette.olive)
     ringMat.color.set(palette.earth)
     cityPoints.forEach((_, i) => {
-      color.set(i % 3 === 0 ? palette.earth : palette.olive)
+      color.set(i % 3 === 0 ? palette.earth : i % 3 === 1 ? palette.cyan : palette.olive)
       cities.setColorAt(i, color)
     })
     if (cities.instanceColor) cities.instanceColor.needsUpdate = true

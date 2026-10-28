@@ -10,7 +10,7 @@ const route = useRoute()
 <template>
   <AppShell>
     <RouterView v-slot="{ Component }">
-      <Transition name="page" mode="out-in">
+      <Transition name="page" :duration="450">
         <component :is="Component" :key="route.path" />
       </Transition>
     </RouterView>

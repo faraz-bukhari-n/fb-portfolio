@@ -26,7 +26,7 @@ const visible = computed(() => {
 
 <template>
   <PageFrame>
-    <TerminalHeading index="03" kicker="archive">Work</TerminalHeading>
+    <TerminalHeading index="03" kicker="$ ls ~/work">Work</TerminalHeading>
     <div class="filters" role="tablist" aria-label="Filter projects">
       <button
         v-for="filter in filters"
@@ -61,6 +61,7 @@ const visible = computed(() => {
   text-transform: uppercase;
   padding: 0.4rem 0.7rem;
   border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
   color: var(--muted);
 }
 

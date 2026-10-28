@@ -2,6 +2,7 @@
 import CareerTimeline from '@/components/viz/CareerTimeline.vue'
 import PageFrame from '@/components/ui/PageFrame.vue'
 import TerminalHeading from '@/components/ui/TerminalHeading.vue'
+import WindowPane from '@/components/ui/WindowPane.vue'
 import { usePageTitle } from '@/composables/usePageTitle'
 import { experience } from '@/content'
 import { defineAsyncComponent, ref } from 'vue'
@@ -14,14 +15,17 @@ const activeId = ref(experience[0]?.id ?? '')
 
 <template>
   <PageFrame wide>
-    <TerminalHeading index="02" kicker="log">Experience</TerminalHeading>
+    <TerminalHeading index="02" kicker="$ git log">Experience</TerminalHeading>
     <div class="experience-grid">
       <CareerTimeline :roles="experience" :active-id="activeId" @select="activeId = $event" />
-      <div class="experience-grid__map">
-        <p class="kicker">geo · workplaces</p>
+      <WindowPane
+        class="experience-grid__map"
+        title="workplaces.geojson"
+        prompt="$ map"
+      >
         <p class="map-hint">Drag to pan · scroll to zoom · click a pin</p>
         <ExperienceMap :roles="experience" :active-id="activeId" @select="activeId = $event" />
-      </div>
+      </WindowPane>
     </div>
   </PageFrame>
 </template>

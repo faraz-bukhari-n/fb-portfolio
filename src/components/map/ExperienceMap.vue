@@ -180,22 +180,22 @@ function mapStyle(theme: ResolvedTheme) {
 function mapPaint(theme: ResolvedTheme) {
   return theme === 'dark'
     ? {
-        glow: '#d4b896',
-        line: '#d49264',
-        pin: '#d49264',
-        idle: '#b4c3a4',
-        stroke: '#1f1c18',
-        text: '#efe8dc',
-        halo: '#161410',
+        glow: '#e8a0b4',
+        line: '#5eead4',
+        pin: '#e8a0b4',
+        idle: '#5eead4',
+        stroke: '#140c0f',
+        text: '#f6ebef',
+        halo: '#140c0f',
       }
     : {
-        glow: '#c4a574',
-        line: '#a2653d',
-        pin: '#a2653d',
-        idle: '#4f5d43',
-        stroke: '#fbf8f2',
-        text: '#2c2723',
-        halo: '#fbf8f2',
+        glow: '#6b1d36',
+        line: '#0e7c7b',
+        pin: '#6b1d36',
+        idle: '#0e7c7b',
+        stroke: '#fbf6f3',
+        text: '#1c1214',
+        halo: '#fbf6f3',
       }
 }
 
@@ -364,8 +364,8 @@ onUnmounted(() => {
   width: 100%;
   height: min(58vh, 520px);
   min-height: 320px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border: 0;
+  border-radius: 8px;
   overflow: hidden;
   background: var(--bg-elev);
 }

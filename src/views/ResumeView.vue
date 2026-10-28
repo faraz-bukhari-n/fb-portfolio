@@ -2,7 +2,15 @@
 import PageFrame from '@/components/ui/PageFrame.vue'
 import TerminalHeading from '@/components/ui/TerminalHeading.vue'
 import { usePageTitle } from '@/composables/usePageTitle'
-import { education, experience, identity, projects, skillGroupLabel, skills } from '@/content'
+import {
+  certifications,
+  education,
+  experience,
+  identity,
+  projects,
+  skillGroupLabel,
+  skills,
+} from '@/content'
 
 usePageTitle('Resume')
 
@@ -14,7 +22,7 @@ function printPage() {
 <template>
   <PageFrame>
     <div class="resume-bar no-print">
-      <TerminalHeading index="CV" kicker="print">Resume</TerminalHeading>
+      <TerminalHeading index="CV" kicker="$ cat resume.md">Resume</TerminalHeading>
       <button type="button" class="print-btn" @click="printPage">Print / save PDF</button>
     </div>
 
@@ -26,6 +34,9 @@ function printPage() {
       <ul>
         <li>{{ identity.location }}</li>
         <li>{{ identity.email }}</li>
+        <li v-if="identity.phone">
+          <a :href="`tel:${identity.phone}`">{{ identity.phone }}</a>
+        </li>
         <li v-for="social in identity.socials" :key="social.id">
           <a :href="social.href">{{ social.label }}</a>
         </li>
@@ -46,6 +57,16 @@ function printPage() {
           {{ [item.gpa, item.honors].filter(Boolean).join(' · ') }}
         </p>
         <p>{{ item.focus.join(' · ') }}</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <article v-for="item in certifications" :key="item.id" class="role">
+        <div class="role__meta">
+          <strong>{{ item.org }}</strong>
+          <span>{{ item.label }}</span>
+        </div>
       </article>
     </section>
 
@@ -80,7 +101,7 @@ function printPage() {
 
     <section>
       <h2>Skills</h2>
-      <p v-for="group in (['fullstack', 'webgis', 'leadership', 'cloud'] as const)" :key="group" class="skill-line">
+      <p v-for="group in (['fullstack', 'webgis', 'ai', 'cloud', 'leadership'] as const)" :key="group" class="skill-line">
         <span>{{ skillGroupLabel[group] }}</span>
         {{ skills.filter((skill) => skill.group === group).map((skill) => skill.name).join(' · ') }}
       </p>
@@ -102,8 +123,9 @@ function printPage() {
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  border: 1px solid var(--cyan);
-  color: var(--cyan);
+  border: 1px solid var(--olive);
+  border-radius: var(--radius-sm);
+  color: var(--olive);
   padding: 0.5rem 0.8rem;
   margin-top: 0.4rem;
 }

@@ -10,7 +10,7 @@ defineProps<{
   <footer class="site-footer">
     <div class="page-shell site-footer__row">
       <p class="kicker">{{ identity.shortName }} // {{ identity.location }}</p>
-      <p class="muted">{{ compact ? identity.email : identity.availability }}</p>
+      <p class="muted">{{ compact ? identity.email : '© 2026 · Vue 3 · Vite' }}</p>
     </div>
   </footer>
 </template>

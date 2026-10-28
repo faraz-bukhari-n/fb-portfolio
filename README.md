@@ -1,6 +1,6 @@
 # Faraz Bukhari — portfolio
 
-Personal site for **Faraz Bukhari**, a full-stack developer and tech lead with a WebGIS background. Remote, Spain. Independent contractor at [Lua Group](https://luagroup.com/en/) since 2024; before that the same product through Ideamappers (2021–2024), and R&D at [Zameen.com](https://www.zameen.com/plotfinder/), where PlotFinder shipped to production.
+Personal site for **Faraz Bukhari**, a full-stack developer and tech lead with a WebGIS background. Remote, Spain. Team lead at [Lua Group](https://luagroup.com/en/) since 2024; before that Ideamappers (2021–2024), and R&D at [Zameen.com](https://www.zameen.com/plotfinder/), where PlotFinder shipped to production.
 
 Vue 3 + TypeScript + Vite. The home hero is a Three.js globe, Experience uses Mapbox, and copy lives in `src/content` — not in the views.
 
@@ -8,14 +8,12 @@ Vue 3 + TypeScript + Vite. The home hero is a Three.js globe, Experience uses Ma
 
 | Route | What it is |
 | --- | --- |
-| `/` | Hero globe + featured case studies |
+| `/` | Hero, GitHub chart, skills, contact |
 | `/about` | Origin through Lua Group |
 | `/experience` | Roles on a timeline, pinned on a map |
 | `/work` | Case studies (PlotFinder, drone progress, Cesium listings) |
-| `/skills` | Zoomable skill graph |
 | `/writing` | Notes |
 | `/resume` | Printable CV |
-| `/contact` | Email and socials |
 
 
 
@@ -55,7 +53,7 @@ Edit these files instead of hunting through Vue templates:
 - `src/content/education.ts` — NUST
 - `src/content/experience.ts` — Lua Group, Ideamappers, Zameen
 - `src/content/projects.ts` — case studies
-- `src/content/skills.ts` — constellation nodes
+- `src/content/skills.ts` — homepage skills globe and inspect copy
 - `src/content/about.ts` — About chapters
 - `src/content/writing.ts` — articles
 

@@ -1,26 +1,36 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
+import type { RouteLocationRaw } from 'vue-router'
 
 defineProps<{
-  links: { to: string; label: string }[]
+  links: { to: RouteLocationRaw; label: string; index?: string }[]
 }>()
 
 const emit = defineEmits<{
   close: []
 }>()
+
+const router = useRouter()
+
+async function go(event: Event, to: RouteLocationRaw) {
+  event.preventDefault()
+  await router.push(to)
+  emit('close')
+}
 </script>
 
 <template>
   <div class="mobile-menu" role="dialog" aria-label="Navigation">
-    <p class="kicker">Menu</p>
+    <p class="kicker">&gt;_ $ ls ~/nav</p>
     <nav>
       <RouterLink
         v-for="link in links"
-        :key="link.to"
+        :key="link.index ?? String(link.to)"
         :to="link.to"
         class="mobile-menu__link"
-        @click="emit('close')"
+        @click="go($event, link.to)"
       >
+        <span>{{ link.index }}</span>
         {{ link.label }}
       </RouterLink>
     </nav>
@@ -48,13 +58,21 @@ nav {
 
 .mobile-menu__link {
   display: flex;
+  align-items: baseline;
   gap: 0.8rem;
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: clamp(1.55rem, 7vw, 2rem);
   letter-spacing: -0.03em;
   padding: 0.55rem 0;
   border-bottom: 1px solid var(--line);
   transition: padding 0.4s var(--ease);
+}
+
+.mobile-menu__link span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--olive);
 }
 
 .mobile-menu__link:hover {

@@ -1,6 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="#f3eee6"/>
-  <circle cx="16" cy="16" r="9" stroke="#4f5d43" stroke-width="1.4"/>
-  <ellipse cx="16" cy="16" rx="9" ry="3.5" stroke="#a2653d" stroke-width="1"/>
-  <path d="M16 7v18" stroke="#4f5d43" stroke-width="0.8" opacity="0.7"/>
+  <style>
+    .badge { fill: #fbf6f3; stroke: #6b1d36; }
+    .mark { fill: #6b1d36; }
+    @media (prefers-color-scheme: dark) {
+      .badge { fill: #140c0f; stroke: #e8a0b4; }
+      .mark { fill: #e8a0b4; }
+    }
+  </style>
+  <rect class="badge" x="2" y="7" width="28" height="18" rx="3.2" stroke-width="1.35" />
+  <g class="mark">
+    <path d="M6.9 11.15h7.35v1.85H8.7v1.7h5.05v1.75H8.7v4.4H6.9V11.15Z" />
+    <path
+      fill-rule="evenodd"
+      d="M16.85 11.15h5.85c2.2 0 3.5 1.35 3.5 3.15 0 1.12-.58 2.02-1.58 2.5 1.22.5 2 1.52 2 2.95 0 2-1.5 3.4-4.05 3.4h-5.72V11.15Zm2.05 1.85v2.15h2.85c.82 0 1.32-.48 1.32-1.08 0-.58-.5-1.07-1.32-1.07h-2.85Zm0 4.15v2.55h3.2c.95 0 1.55-.58 1.55-1.28 0-.7-.6-1.27-1.55-1.27h-3.2Z"
+    />
+  </g>
 </svg>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HudNav from './HudNav.vue'
 import RouteWipe from './RouteWipe.vue'
+import SectionRail from './SectionRail.vue'
 import SiteFooter from './SiteFooter.vue'
 import { useLenis } from '@/composables/useLenis'
 import { computed } from 'vue'
@@ -14,11 +15,12 @@ useLenis(() => !fullBleed.value)
 
 <template>
   <HudNav />
+  <SectionRail />
   <RouteWipe />
   <main :class="{ 'is-full-bleed': fullBleed }">
     <slot />
   </main>
-  <SiteFooter v-if="!fullBleed" />
+  <SiteFooter :compact="fullBleed" />
 </template>
 
 <style scoped>

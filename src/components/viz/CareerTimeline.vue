@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import TagChip from '@/components/ui/TagChip.vue'
-import { ref, watch } from 'vue'
 import type { ExperienceRole } from '@/content'
 
-const props = defineProps<{
+defineProps<{
   roles: ExperienceRole[]
   activeId?: string
 }>()
@@ -11,26 +10,17 @@ const props = defineProps<{
 const emit = defineEmits<{
   select: [id: string]
 }>()
-
-const openId = ref(props.activeId ?? props.roles[0]?.id ?? '')
-
-watch(
-  () => props.activeId,
-  (id) => {
-    if (id) openId.value = id
-  },
-)
-
-function toggle(id: string) {
-  openId.value = openId.value === id ? id : id
-  emit('select', id)
-}
 </script>
 
 <template>
   <ol class="timeline">
     <li v-for="role in roles" :key="role.id">
-      <button type="button" class="timeline__node" :class="{ 'is-open': openId === role.id }" @click="toggle(role.id)">
+      <button
+        type="button"
+        class="timeline__node"
+        :class="{ 'is-open': activeId === role.id }"
+        @click="emit('select', role.id)"
+      >
         <span class="timeline__dot" />
         <div>
           <p class="kicker">{{ role.start }} — {{ role.end }} · {{ role.location }}</p>
@@ -38,8 +28,8 @@ function toggle(id: string) {
           <p class="timeline__org">{{ role.org }}</p>
         </div>
       </button>
-      <div v-if="openId === role.id" class="timeline__body">
-        <p>{{ role.summary }}</p>
+      <div class="timeline__body" :class="{ 'is-open': activeId === role.id }">
+        <p class="timeline__summary">{{ role.summary }}</p>
         <ul>
           <li v-for="bullet in role.bullets" :key="bullet">{{ bullet }}</li>
         </ul>
@@ -59,8 +49,8 @@ function toggle(id: string) {
   border-left: 1px solid var(--line);
 }
 
-li + li {
-  margin-top: 0.35rem;
+.timeline > li + li {
+  margin-top: 1.15rem;
 }
 
 .timeline__node {
@@ -110,14 +100,24 @@ h3 {
   color: var(--muted);
 }
 
-.timeline__body p,
+.timeline__summary {
+  margin: 0 0 0.7rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
 .timeline__body li {
   color: var(--muted);
   line-height: 1.6;
 }
 
 .timeline__body ul {
+  margin: 0;
   padding-left: 1.1rem;
+}
+
+.timeline__body li + li {
+  margin-top: 0.45rem;
 }
 
 .timeline__tags {
