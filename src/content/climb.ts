@@ -4,7 +4,6 @@ export type ClimbMilestone = {
   kicker: string
   title: string
   line: string
-  video: string
 }
 
 export type ClimbOffer = {
@@ -20,7 +19,6 @@ export const climbMilestones: ClimbMilestone[] = [
     kicker: 'Who',
     title: 'Faraz Bukhari',
     line: 'Full-stack · team lead · WebGIS. Remote, Spain.',
-    video: 'videos/climb-who.mp4',
   },
   {
     id: 'nust',
@@ -28,7 +26,6 @@ export const climbMilestones: ClimbMilestone[] = [
     kicker: '2013–2017',
     title: 'GeoInformatics, NUST',
     line: 'Silver medal. Trained to treat the map as the product.',
-    video: 'videos/climb-nust.mp4',
   },
   {
     id: 'zameen',
@@ -36,7 +33,6 @@ export const climbMilestones: ClimbMilestone[] = [
     kicker: '2018–2021',
     title: 'PlotFinder, Zameen.com',
     line: 'Associate geomatics engineer. Prototype → production plot search. Led the GIS data team.',
-    video: 'videos/climb-zameen.mp4',
   },
   {
     id: 'webgis',
@@ -44,7 +40,6 @@ export const climbMilestones: ClimbMilestone[] = [
     kicker: 'Craft',
     title: 'Mapbox · Cesium · 3D',
     line: 'Leaflet then Mapbox. Drone progress. Apartments you can inspect in 3D.',
-    video: 'videos/climb-webgis.mp4',
   },
   {
     id: 'lua',
@@ -52,7 +47,6 @@ export const climbMilestones: ClimbMilestone[] = [
     kicker: '2021–now',
     title: 'Team lead, Lua Group',
     line: 'Influencer platform. 30k concurrent → 2M+ users. Remote, Spain.',
-    video: 'videos/climb-lua.mp4',
   },
   {
     id: 'hire',
@@ -60,7 +54,6 @@ export const climbMilestones: ClimbMilestone[] = [
     kicker: 'Next',
     title: 'What I can do for you',
     line: 'Ship a spatial product. Lead the build. Make the data real.',
-    video: 'videos/climb-hire.mp4',
   },
 ]
 

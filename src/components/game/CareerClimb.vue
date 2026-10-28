@@ -1,22 +1,19 @@
 <script setup lang="ts">
 import { climbMilestones, type ClimbMilestone } from '@/content'
 import { useEventListener } from '@vueuse/core'
-import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { computed, onMounted, onUnmounted, ref, watch } from 'vue'
 
 const props = defineProps<{
   reduced: boolean
 }>()
 
 const canvas = ref<HTMLCanvasElement | null>(null)
-const player = ref<HTMLVideoElement | null>(null)
 const playing = ref(false)
 const gas = ref(false)
 const reverse = ref(false)
 const distance = ref(0)
 const activeId = ref(climbMilestones[0]?.id ?? '')
 const unlocked = ref<string[]>([])
-const reel = ref<ClimbMilestone | null>(null)
-const muted = ref(true)
 
 const active = computed(
   () => climbMilestones.find((item) => item.id === activeId.value) ?? climbMilestones[0],
@@ -48,10 +45,6 @@ const seen = new Set<string>()
 
 function css(name: string, fallback: string) {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback
-}
-
-function videoSrc(path: string) {
-  return `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
 }
 
 function ground(x: number) {
@@ -101,37 +94,6 @@ function resetTo(x: number) {
   car.omega = 0
 }
 
-function openReel(mile: ClimbMilestone) {
-  if (props.reduced || !mile.video) return
-  reel.value = mile
-  gas.value = false
-  reverse.value = false
-  keys.clear()
-  playing.value = false
-  nextTick(() => {
-    const el = player.value
-    if (!el) return
-    el.currentTime = 0
-    el.muted = muted.value
-    el.play().catch(() => {
-      muted.value = true
-      el.muted = true
-      el.play().catch(() => closeReel())
-    })
-  })
-}
-
-function closeReel(resume = true) {
-  player.value?.pause()
-  reel.value = null
-  if (resume && !props.reduced) playing.value = true
-}
-
-function toggleMute() {
-  muted.value = !muted.value
-  if (player.value) player.value.muted = muted.value
-}
-
 function unlockAt(x: number) {
   let current: ClimbMilestone = climbMilestones[0]
   for (const mile of climbMilestones) {
@@ -140,7 +102,6 @@ function unlockAt(x: number) {
       if (!seen.has(mile.id)) {
         seen.add(mile.id)
         unlocked.value = [...seen]
-        openReel(mile)
       }
     }
   }
@@ -325,7 +286,7 @@ function draw() {
 function loop(now: number) {
   const dt = Math.min(0.033, (now - last) / 1000 || 0.016)
   last = now
-  if (playing.value && !props.reduced && !reel.value) step(dt)
+  if (playing.value && !props.reduced) step(dt)
   draw()
   raf = requestAnimationFrame(loop)
 }
@@ -357,13 +318,6 @@ function resize(initial = false) {
 }
 
 function onKey(event: KeyboardEvent, down: boolean) {
-  if (reel.value) {
-    if (down && (event.code === 'Escape' || event.code === 'Space' || event.code === 'KeyS')) {
-      event.preventDefault()
-      closeReel()
-    }
-    return
-  }
   if (!['ArrowLeft', 'ArrowRight', 'KeyA', 'KeyD', 'Space', 'KeyR'].includes(event.code)) return
   if (event.code === 'Space' || event.code.startsWith('Arrow')) event.preventDefault()
   if (down) keys.add(event.code)
@@ -373,11 +327,10 @@ function onKey(event: KeyboardEvent, down: boolean) {
 }
 
 function startDrive() {
-  if (!reel.value) playing.value = true
+  playing.value = true
 }
 
 function setPedal(kind: 'gas' | 'reverse', on: boolean, event?: PointerEvent) {
-  if (reel.value) return
   playing.value = true
   if (event && on) {
     try {
@@ -410,10 +363,7 @@ onUnmounted(() => {
 watch(
   () => props.reduced,
   (off) => {
-    if (off) {
-      closeReel(false)
-      playing.value = false
-    }
+    if (off) playing.value = false
   },
 )
 
@@ -442,7 +392,7 @@ useEventListener(window, 'blur', () => {
         class="climb__canvas"
         tabindex="0"
         role="application"
-        aria-label="Drive the car along the hills. D or Gas forward, A or Reverse backward. Crossing a flag plays a clip."
+        aria-label="Drive the car along the hills. D or Gas forward, A or Reverse backward."
         @pointerdown="startDrive"
         @wheel.prevent
       />
@@ -455,30 +405,10 @@ useEventListener(window, 'blur', () => {
           {{ mile.kicker }}
         </li>
       </ol>
-      <div v-if="!reel" class="climb__card" :key="active.id">
+      <div class="climb__card" :key="active.id">
         <p class="kicker">{{ active.kicker }}</p>
         <h3>{{ active.title }}</h3>
         <p>{{ active.line }}</p>
-      </div>
-      <div v-if="reel" class="climb__reel">
-        <video
-          :key="reel.id"
-          ref="player"
-          :src="videoSrc(reel.video)"
-          playsinline
-          :muted="muted"
-          @ended="() => closeReel()"
-          @error="() => closeReel()"
-        />
-        <div class="climb__reel-meta">
-          <p class="kicker">{{ reel.kicker }}</p>
-          <h3>{{ reel.title }}</h3>
-          <p>{{ reel.line }}</p>
-        </div>
-        <div class="climb__reel-bar">
-          <button type="button" @click="toggleMute">{{ muted ? 'Unmute' : 'Mute' }}</button>
-          <button type="button" @click="() => closeReel()">Skip · Esc</button>
-        </div>
       </div>
       <div class="climb__pedals">
         <button
@@ -502,7 +432,7 @@ useEventListener(window, 'blur', () => {
           Gas
         </button>
       </div>
-      <p v-if="!playing && !reel" class="climb__hint">D gas · A reverse</p>
+      <p v-if="!playing" class="climb__hint">D gas · A reverse</p>
     </template>
   </div>
 </template>
@@ -577,65 +507,17 @@ useEventListener(window, 'blur', () => {
   pointer-events: none;
 }
 
-.climb__card h3,
-.climb__reel-meta h3 {
+.climb__card h3 {
   margin: 0.15rem 0 0.25rem;
   font-size: 1.05rem;
   letter-spacing: -0.03em;
 }
 
-.climb__card p:last-child,
-.climb__reel-meta p:last-child {
+.climb__card p:last-child {
   margin: 0;
   color: var(--muted);
   font-size: 0.88rem;
   line-height: 1.4;
-}
-
-.climb__reel {
-  position: absolute;
-  inset: 0;
-  background: #05070a;
-}
-
-.climb__reel video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.78;
-}
-
-.climb__reel-meta {
-  position: absolute;
-  left: 0.85rem;
-  bottom: 3.5rem;
-  max-width: min(24rem, calc(100% - 9rem));
-  padding: 0.75rem 0.9rem 0.85rem;
-  border: 1px solid rgb(255 255 255 / 0.14);
-  border-radius: var(--radius-sm);
-  background: rgb(5 7 10 / 0.72);
-  color: #e8eef6;
-}
-
-.climb__reel-bar {
-  position: absolute;
-  top: 0.7rem;
-  right: 0.7rem;
-  display: flex;
-  gap: 0.4rem;
-}
-
-.climb__reel-bar button {
-  height: 2rem;
-  padding: 0 0.7rem;
-  border: 1px solid rgb(255 255 255 / 0.22);
-  border-radius: var(--radius-sm);
-  background: rgb(5 7 10 / 0.7);
-  color: #e8eef6;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .climb__pedals {
@@ -699,8 +581,7 @@ useEventListener(window, 'blur', () => {
 }
 
 @media (min-width: 720px) {
-  .climb__card,
-  .climb__reel-meta {
+  .climb__card {
     bottom: 0.85rem;
     left: 0.9rem;
   }
