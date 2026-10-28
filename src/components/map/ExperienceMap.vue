@@ -169,7 +169,8 @@ function flyToActive() {
 }
 
 function onPointClick(event: MapLayerMouseEvent) {
-  const id = event.features?.[0]?.properties?.id
+  const feature = event.features?.[0] as { properties?: { id?: unknown } | null } | undefined
+  const id = feature?.properties?.id
   if (typeof id === 'string') emit('select', id)
 }
 
