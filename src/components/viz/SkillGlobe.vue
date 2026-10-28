@@ -26,6 +26,7 @@ const ORBIT: GlobeSkill[] = [
   { name: 'Python', devicon: 'devicon-python-plain' },
   { name: 'AWS', devicon: 'devicon-amazonwebservices-plain-wordmark' },
   { name: 'Firebase', devicon: 'devicon-firebase-plain' },
+  { name: 'Socket.io', devicon: 'devicon-socketio-original', invert: true },
   { name: 'Tailwind', devicon: 'devicon-tailwindcss-original' },
   { name: 'Sass', devicon: 'devicon-sass-original' },
   { name: 'JavaScript', devicon: 'devicon-javascript-plain' },

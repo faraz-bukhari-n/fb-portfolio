@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import CardGo from './CardGo.vue'
 import TagChip from './TagChip.vue'
 import { categoryLabel, type Project } from '@/content'
 
@@ -23,6 +24,7 @@ defineProps<{
       <div class="case-card__tags">
         <TagChip v-for="category in project.categories" :key="category" :label="categoryLabel[category]" />
       </div>
+      <CardGo label="View case" />
     </div>
   </RouterLink>
 </template>
@@ -32,6 +34,9 @@ defineProps<{
   display: flex;
   flex-direction: column;
   min-width: 0;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
   border: 1px solid transparent;
   border-radius: 14px;
   background:
@@ -99,9 +104,25 @@ h3 {
   letter-spacing: -0.04em;
 }
 
-.case-card:hover {
+.case-card:hover,
+.case-card:focus-visible {
   transform: translateY(-4px);
   box-shadow: var(--glow-cyan);
+}
+
+.case-card:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.case-card:hover :deep(.card-go),
+.case-card:focus-visible :deep(.card-go) {
+  color: var(--cyan);
+}
+
+.case-card:hover :deep(.card-go svg),
+.case-card:focus-visible :deep(.card-go svg) {
+  transform: translateX(4px);
 }
 
 p {

@@ -12,13 +12,28 @@ const tree = [
   },
   {
     label: 'Frameworks',
-    items: ['ReactJS', 'Context API / Redux / Axios', 'NodeJS', 'Express', 'Sequelize'],
+    items: ['ReactJS', 'Context API / Redux / Axios', 'NodeJS', 'Express', 'Sequelize', 'REST APIs'],
   },
   { label: 'Maps', items: ['MapboxGL', 'Leaflet', 'CesiumJS', 'Turf JS'] },
-  { label: 'Databases', items: ['MySQL', 'PostgreSQL / PostGIS', 'Redis', 'Firebase'] },
+  { label: 'Databases', items: ['MySQL', 'PostgreSQL / PostGIS', 'Redis', 'Firebase / Firestore'] },
   {
     label: 'Backend & services',
-    items: ['Bull Queues', 'AWS SDK', 'Mailgun', 'Handlebars', 'Directus', 'Puppeteer', 'Webpack / Babel', 'Bit Dev'],
+    items: [
+      'Socket.io',
+      'Temporal.io',
+      'Bull Queues',
+      'AWS SDK',
+      'Mailgun',
+      'Handlebars',
+      'Directus',
+      'Puppeteer',
+      'Webpack / Babel',
+      'Bit Dev',
+    ],
+  },
+  {
+    label: 'AI',
+    items: ['AWS Bedrock', 'Claude Haiku', 'AWS Rekognition', 'OpenAI'],
   },
   {
     label: 'GIS methods',
@@ -28,11 +43,16 @@ const tree = [
       'Raster handling',
       'Vector handling',
       'Spatial Analysis',
+      'FME / ETL',
     ],
   },
   {
     label: 'Software',
-    items: ['ArcGIS / QGIS / ERDAS Imagine', 'Postman', 'Jira / Confluence / Slack / Airtable'],
+    items: ['Git', 'GitHub', 'VS Code', 'ArcGIS / QGIS / ERDAS Imagine', 'Postman', 'Jira / Confluence / Slack / Airtable'],
+  },
+  {
+    label: 'Leadership',
+    items: ['Team lead', 'Delivery'],
   },
 ]
 

@@ -14,6 +14,7 @@ const filters: { id: 'all' | ProjectCategory; label: string }[] = [
   { id: 'platform', label: categoryLabel.platform },
   { id: 'lead', label: categoryLabel.lead },
   { id: 'fullstack', label: categoryLabel.fullstack },
+  { id: 'ai', label: categoryLabel.ai },
 ]
 
 const active = ref<(typeof filters)[number]['id']>('all')

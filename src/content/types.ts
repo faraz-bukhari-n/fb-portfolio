@@ -59,7 +59,7 @@ export type ExperienceRole = {
   stack: string[]
 }
 
-export type ProjectCategory = 'gis' | 'platform' | 'lead' | 'fullstack'
+export type ProjectCategory = 'gis' | 'platform' | 'lead' | 'fullstack' | 'ai'
 
 export type ArchitectureNode = {
   id: string
@@ -127,4 +127,5 @@ export const categoryLabel: Record<ProjectCategory, string> = {
   platform: 'Platform',
   lead: 'Lead',
   fullstack: 'Full-stack',
+  ai: 'AI',
 }

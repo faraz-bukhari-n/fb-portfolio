@@ -7,14 +7,14 @@ export const projects: Project[] = [
     year: '2021–now',
     featured: true,
     summary:
-      'One-stop influencer marketing for Instagram and TikTok: website, admin portal, influencer app, and client portal.',
+      'One-stop influencer marketing for Instagram and TikTok: four surfaces, personalised campaign invites, Firestore campaign chat, and live staff notifications.',
     role: 'Senior software developer · team lead',
     problem:
-      'Brands and creators were stitching campaigns together across spreadsheets, DMs, and ads managers. The platform had to be one place — and it had to stay up at scale.',
+      'Brands and creators were stitching campaigns together across spreadsheets, DMs, and ads managers. Reaching creators at scale usually meant a mail-merge that landed in spam. Briefs lived in side chats. Staff found out about work by refreshing. The platform had to be one place.',
     approach:
-      'I led full-stack delivery of Lua’s campaign platform: public site, admin, influencer app, and client portal. When query timeouts hit 30k concurrent users, I re-engineered the database architecture so the same product could serve 2M+ users with sub-3-second responses.',
+      'I led full-stack delivery of Lua’s campaign platform: public site, admin, influencer app, and client portal. When query timeouts hit 30k concurrent users, I re-engineered the database architecture so the same product could serve 2M+ users with sub-3-second responses. Outreach is a backbone feature: customised campaign invites in bulk, written in a personal tone so creators do not treat the mail as automated. Two live systems sit in the product: Firestore campaign chat so client, creator, and admins work a single brief in one thread; and staff notifications on Postgres plus Socket.io so Lua employees see tasks, campaigns, and assignments as they land. On the ops side, Bedrock and Rekognition sit in the hunting loop — the dedicated case is Campaign AI at Lua.',
     outcome:
-      'A live influencer-marketing platform used at scale — 2M+ users, sub-3-second responses, four surfaces in production.',
+      'A live influencer-marketing platform used at scale — 2M+ users, sub-3-second responses, four surfaces in production, campaign invites that do not read as a blast, a campaign thread that actually closes a brief, and a staff desk that updates without a refresh.',
     stack: [
       'React',
       'Node.js',
@@ -26,7 +26,12 @@ export const projects: Project[] = [
       'Temporal.io',
       'Bull',
       'AWS',
+      'AWS Bedrock',
+      'AWS Rekognition',
+      'Mailgun',
+      'Handlebars',
       'Firebase',
+      'Firestore',
     ],
     categories: ['platform', 'fullstack', 'lead'],
     architecture: [
@@ -34,7 +39,37 @@ export const projects: Project[] = [
       { id: 'admin', label: 'Admin portal' },
       { id: 'app', label: 'Influencer app' },
       { id: 'client', label: 'Client portal' },
+      { id: 'outreach', label: 'Personalised invites' },
+      { id: 'chat', label: 'Campaign chat' },
+      { id: 'notify', label: 'Staff live feed' },
       { id: 'db', label: 'Postgres at scale' },
+    ],
+    lng: -3.7038,
+    lat: 40.4168,
+  },
+  {
+    slug: 'lua-ai',
+    title: 'Campaign AI at Lua',
+    year: '2024–now',
+    featured: true,
+    summary:
+      'Hunting loop in production: personalised campaign invites out, Bedrock on the replies, Rekognition on whether the creator’s media is live.',
+    role: 'Senior software developer · team lead · AI',
+    problem:
+      'The influencer hunting team was sending outreach and then reading every inbound by hand, then guessing from profiles whether a creator was worth the campaign. That does not scale when the next brief is the biggest one you have run.',
+    approach:
+      'Outreach is the other half of the same loop: customised campaign invites in bulk, personal in tone so creators do not treat the mail as spam. Replies land in the hunting inbox I put on AWS Bedrock (Claude Haiku) — campaign label, then interested, not interested, or in active negotiation — so they work a queue, not an inbox. AWS Rekognition looks at the creator’s media for liveness and whether the profile is actually good enough to book.',
+    outcome:
+      'Hunting is planned instead of reactive: invite, classify, score. After we tuned it, Rekognition was 95% accurate on the labelled set. The biggest campaign we have run closed on time; the client was satisfied.',
+    stack: ['Mailgun', 'Handlebars', 'AWS Bedrock', 'Claude Haiku', 'AWS Rekognition', 'Node.js', 'PostgreSQL'],
+    categories: ['ai', 'platform', 'lead'],
+    architecture: [
+      { id: 'invite', label: 'Personalised invites' },
+      { id: 'mail', label: 'Hunting mailbox' },
+      { id: 'haiku', label: 'Bedrock · Claude Haiku' },
+      { id: 'labels', label: 'Campaign + intent' },
+      { id: 'rekog', label: 'Rekognition liveness' },
+      { id: 'queue', label: 'Ops queue' },
     ],
     lng: -3.7038,
     lat: 40.4168,
@@ -75,7 +110,7 @@ export const projects: Project[] = [
       'Shipped a Spanish real-estate product with generative AI in the workflow — AWS Bedrock and OpenAI on a full-stack core.',
     outcome: 'A live real-estate platform that uses AI as part of the product, not a demo.',
     stack: ['React', 'Node.js', 'AWS Bedrock', 'OpenAI', 'PostgreSQL'],
-    categories: ['platform', 'fullstack'],
+    categories: ['platform', 'fullstack', 'ai'],
     architecture: [
       { id: 'listings', label: 'Listings' },
       { id: 'ai', label: 'Bedrock + OpenAI' },

@@ -47,6 +47,6 @@ export const aboutChapters: AboutChapter[] = [
     title: 'Now',
     yearLabel: '2021–',
     location: 'Ideamappers, Islamabad → Lua Group',
-    body: 'Team lead on Lua’s influencer platform. 30k concurrent → 2M+ users. Remote, Spain.',
+    body: 'Team lead on Lua’s influencer platform. Personalised invites, campaign chat, live staff desk, Bedrock, Rekognition. 30k concurrent → 2M+ users. Remote, Spain.',
   },
 ]

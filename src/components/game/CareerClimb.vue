@@ -19,7 +19,7 @@ const active = computed(
   () => climbMilestones.find((item) => item.id === activeId.value) ?? climbMilestones[0],
 )
 
-const TRACK_END = 4000
+const TRACK_END = 4600
 const WHEELBASE = 50
 const WHEEL_R = 10
 
@@ -418,6 +418,8 @@ useEventListener(window, 'blur', () => {
           @pointerdown.prevent="setPedal('reverse', true, $event)"
           @pointerup.prevent="setPedal('reverse', false)"
           @pointercancel="setPedal('reverse', false)"
+          @selectstart.prevent
+          @contextmenu.prevent
         >
           Reverse
         </button>
@@ -428,6 +430,8 @@ useEventListener(window, 'blur', () => {
           @pointerdown.prevent="setPedal('gas', true, $event)"
           @pointerup.prevent="setPedal('gas', false)"
           @pointercancel="setPedal('gas', false)"
+          @selectstart.prevent
+          @contextmenu.prevent
         >
           Gas
         </button>
@@ -467,7 +471,10 @@ useEventListener(window, 'blur', () => {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.35rem;
+  max-width: calc(100% - 2rem);
   margin: 0;
   padding: 0.28rem 0.4rem;
   list-style: none;
@@ -539,6 +546,11 @@ useEventListener(window, 'blur', () => {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .climb__pedals button.is-on {

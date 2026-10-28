@@ -18,7 +18,7 @@ const source = [
   '    <Developer',
   `      name="${identity.name}"`,
   '      role="Senior Full-Stack · Team Lead"',
-  '      craft="WebGIS · scale · maps"',
+      '      craft="WebGIS · scale · AI"',
   '    />',
   '  );',
   '};',

@@ -5,7 +5,7 @@ import { usePrefersReducedMotion } from '@/composables/usePrefersReducedMotion'
 import { computed, nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-type IconName = 'code' | 'terminal' | 'grid' | 'briefcase' | 'cpu' | 'user' | 'mail'
+type IconName = 'code' | 'terminal' | 'grid' | 'briefcase' | 'star' | 'cpu' | 'user' | 'mail'
 
 type RailItem = {
   id: string
@@ -20,6 +20,7 @@ const items: RailItem[] = [
   { id: 'climb', label: 'Climb', to: '/', hash: '#climb', icon: 'terminal' },
   { id: 'work', label: 'Work', to: '/work', icon: 'grid' },
   { id: 'experience', label: 'Experience', to: '/experience', icon: 'briefcase' },
+  { id: 'career', label: 'Career', to: '/highlights', hash: '#highlights', icon: 'star' },
   { id: 'skills', label: 'Skills', to: '/', hash: '#skills', icon: 'cpu' },
   { id: 'about', label: 'About', to: '/about', icon: 'user' },
   { id: 'contact', label: 'Contact', to: '/', hash: '#contact', icon: 'mail' },
@@ -28,6 +29,7 @@ const items: RailItem[] = [
 const homeSpy: Record<string, string> = {
   hero: 'home',
   climb: 'climb',
+  highlights: 'career',
   skills: 'skills',
   contact: 'contact',
 }
@@ -48,6 +50,7 @@ const onHome = computed(() => route.path === '/')
 function syncFromRoute() {
   if (onHome.value) {
     if (route.hash === '#climb') active.value = 'climb'
+    else if (route.hash === '#highlights') active.value = 'career'
     else if (route.hash === '#skills') active.value = 'skills'
     else if (route.hash === '#contact') active.value = 'contact'
     else active.value = 'home'
@@ -168,6 +171,9 @@ onUnmounted(() => observer?.disconnect())
             <rect width="20" height="14" x="2" y="7" rx="2" />
             <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
             <path d="M2 13h20" />
+          </svg>
+          <svg v-else-if="item.icon === 'star'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
           </svg>
           <svg v-else-if="item.icon === 'cpu'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect width="16" height="16" x="4" y="4" rx="2" />

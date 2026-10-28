@@ -10,6 +10,7 @@ const open = ref(false)
 const catalog = [
   { cmd: 'work', hint: 'selected products' },
   { cmd: 'experience', hint: 'timeline + map' },
+  { cmd: 'career', hint: 'career highlights' },
   { cmd: 'skills', hint: 'skills universe' },
   { cmd: 'contact', hint: 'email / phone' },
   { cmd: 'resume', hint: 'print-ready CV' },
@@ -29,6 +30,7 @@ function run(cmd = matches.value[0]?.cmd) {
   open.value = false
   if (cmd === 'work') router.push('/work')
   else if (cmd === 'experience') router.push('/experience')
+  else if (cmd === 'career') router.push('/highlights')
   else if (cmd === 'skills') router.push({ path: '/', hash: '#skills' })
   else if (cmd === 'contact' || cmd === 'hire') router.push({ path: '/', hash: '#contact' })
   else if (cmd === 'resume') router.push(identity.resumePath)
@@ -51,7 +53,7 @@ function run(cmd = matches.value[0]?.cmd) {
       type="text"
       autocomplete="off"
       spellcheck="false"
-      placeholder="work · skills · hire · resume"
+      placeholder="work · career · skills · hire"
       @focus="open = true"
       @blur="open = false"
       @keydown.enter.prevent="run()"

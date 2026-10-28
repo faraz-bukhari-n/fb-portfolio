@@ -10,7 +10,7 @@ export const identity: Identity = {
   phone: '+92 315 5126174',
   availability: 'Open to leadership roles and ambitious spatial products',
   summary:
-    'I architect PERN-stack products and lead the engineering behind them — real-time marketing platforms, map-first tools, and data that has to stay fast at scale.',
+    'I architect PERN-stack products and lead the engineering behind them — real-time marketing platforms, map-first tools, and AI the campaign team actually uses.',
   resumePath: '/resume',
   socials: [
     { id: 'github', label: 'GitHub', href: 'https://github.com/faraz-bukhari-n' },

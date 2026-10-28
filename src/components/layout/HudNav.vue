@@ -12,7 +12,8 @@ const router = useRouter()
 const links: { id: string; to: RouteLocationRaw; label: string; index: string }[] = [
   { id: 'work', to: '/work', label: 'Work', index: '01' },
   { id: 'experience', to: '/experience', label: 'Experience', index: '02' },
-  { id: 'skills', to: { name: 'home', hash: '#skills' }, label: 'Skills', index: '03' },
+  { id: 'career', to: '/highlights', label: 'Career', index: '03' },
+  { id: 'skills', to: { name: 'home', hash: '#skills' }, label: 'Skills', index: '04' },
 ]
 
 function isActive(id: string, to: RouteLocationRaw) {

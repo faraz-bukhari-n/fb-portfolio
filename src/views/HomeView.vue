@@ -6,11 +6,12 @@ import GlowButton from '@/components/ui/GlowButton.vue'
 import HeroEditor from '@/components/ui/HeroEditor.vue'
 import WindowPane from '@/components/ui/WindowPane.vue'
 import GithubContributions from '@/components/viz/GithubContributions.vue'
+import HighlightCard from '@/components/viz/HighlightCard.vue'
 import SkillsShowcase from '@/components/viz/SkillsShowcase.vue'
 import { githubAvatarUrl } from '@/composables/useGithubContributions'
 import { usePageTitle } from '@/composables/usePageTitle'
 import { usePrefersReducedMotion } from '@/composables/usePrefersReducedMotion'
-import { featuredProjects, identity } from '@/content'
+import { featuredHighlights, featuredProjects, identity } from '@/content'
 import { useClipboard } from '@vueuse/core'
 import { computed, ref } from 'vue'
 
@@ -45,8 +46,9 @@ const stats = [
   { value: 'PERN', label: 'primary stack' },
 ]
 
-const stack = ['React', 'Node', 'Postgres', 'Mapbox', 'Temporal', 'Bedrock']
+const stack = ['React', 'Node', 'Postgres', 'Socket.io', 'Temporal', 'Bedrock']
 const featuredWork = featuredProjects().slice(0, 3)
+const featuredCareer = featuredHighlights()
 </script>
 
 <template>
@@ -145,6 +147,19 @@ const featuredWork = featuredProjects().slice(0, 3)
       <WindowPane title="contributions.grid" prompt="$ git">
         <GithubContributions />
       </WindowPane>
+    </div>
+
+    <div id="highlights" class="home__highlights">
+      <div class="home__highlights-head">
+        <p class="home__section">
+          <span>&gt;_</span>
+          $ cat highlights.md
+        </p>
+        <GlowButton to="/highlights" variant="ghost">View all highlights</GlowButton>
+      </div>
+      <div class="home__highlights-grid">
+        <HighlightCard v-for="item in featuredCareer" :key="item.id" :highlight="item" />
+      </div>
     </div>
 
     <div id="skills" class="home__skills">
@@ -783,6 +798,29 @@ const featuredWork = featuredProjects().slice(0, 3)
   background: transparent;
 }
 
+.home__highlights {
+  scroll-margin-top: calc(var(--nav-h) + 1rem);
+}
+
+.home__highlights-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.home__highlights-head .home__section {
+  margin: 0;
+}
+
+.home__highlights-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+}
+
 .home__work {
   scroll-margin-top: calc(var(--nav-h) + 1rem);
 }
@@ -906,7 +944,8 @@ const featuredWork = featuredProjects().slice(0, 3)
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .home__work-grid {
+  .home__work-grid,
+  .home__highlights-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 

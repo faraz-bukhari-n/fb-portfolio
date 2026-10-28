@@ -8,10 +8,11 @@ Vue 3 + TypeScript + Vite. The home hero is a Three.js globe, Experience uses Ma
 
 | Route | What it is |
 | --- | --- |
-| `/` | Hero, GitHub chart, skills, contact |
+| `/` | Hero, GitHub chart, career highlights, skills, contact |
 | `/about` | Origin through Lua Group |
 | `/experience` | Roles on a timeline, pinned on a map |
-| `/work` | Case studies (PlotFinder, drone progress, Cesium listings) |
+| `/highlights` | Career highlights |
+| `/work` | Case studies (Lua campaign AI, PlotFinder, drone progress, Cesium listings) |
 | `/writing` | Notes |
 | `/resume` | Printable CV |
 
@@ -52,6 +53,7 @@ Edit these files instead of hunting through Vue templates:
 - `src/content/identity.ts` — name, role, summary, email, socials
 - `src/content/education.ts` — NUST
 - `src/content/experience.ts` — Lua Group, Ideamappers, Zameen
+- `src/content/highlights.ts` — career highlights on home and `/highlights`
 - `src/content/projects.ts` — case studies
 - `src/content/skills.ts` — homepage skills globe and inspect copy
 - `src/content/about.ts` — About chapters
