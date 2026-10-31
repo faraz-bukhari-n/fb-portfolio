@@ -28,11 +28,11 @@ export const climbMilestones: ClimbMilestone[] = [
     line: 'Silver medal. Trained to treat the map as the product.',
   },
   {
-    id: 'kechs',
+    id: 'fyp',
     at: 900,
-    kicker: 'Start',
-    title: 'City GIS, not another report',
-    line: 'Islamabad e-governance dashboard. Spatial ETL so administration had a map they could run.',
+    kicker: 'FYP',
+    title: 'Islamabad Dashboard, NUST',
+    line: 'Final year project. E-governance dashboard on spatial ETL — the first map product I finished.',
   },
   {
     id: 'plotfinder',

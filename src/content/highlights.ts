@@ -114,13 +114,13 @@ export const highlights: CareerHighlight[] = [
     href: '/work/plotfinder',
   },
   {
-    id: 'kechs',
-    year: '2017–2018',
-    kicker: 'Start',
-    title: 'City GIS, not another report',
-    line: 'Islamabad e-governance dashboard. Spatial ETL for a housing society so administration had a map they could run.',
+    id: 'fyp',
+    year: '2017',
+    kicker: 'FYP',
+    title: 'Islamabad Dashboard, NUST',
+    line: 'Final year project. E-governance dashboard on spatial ETL — the first map product I took to a finish.',
     detail:
-      'GIS administrator at KECHS. Extract, transform, load. ArcGIS and QGIS before the work moved into the browser.',
+      'Geoinformatics capstone at NUST, not a client job. City GIS as a dashboard, before the work moved into production at Zameen.',
     href: '/work/islamabad-dashboard',
   },
 ]

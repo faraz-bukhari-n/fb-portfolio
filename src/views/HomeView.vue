@@ -41,8 +41,8 @@ function onPhotoError() {
 
 const stats = [
   { value: '08', label: 'years building' },
-  { value: '2M+', label: 'users shipped' },
-  { value: '30k', label: 'concurrent' },
+  { value: '20+', label: 'projects shipped' },
+  { value: '18', label: 'people led' },
   { value: 'PERN', label: 'primary stack' },
 ]
 

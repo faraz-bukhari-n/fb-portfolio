@@ -105,21 +105,4 @@ export const experience: ExperienceRole[] = [
       'FME',
     ],
   },
-  {
-    id: 'kechs',
-    title: 'GIS Administrator',
-    org: 'KECHS',
-    start: '2017',
-    end: '2018',
-    location: 'Islamabad',
-    lng: 73.078,
-    lat: 33.651,
-    summary: 'GIS administrator. Society data into a map the city could run on.',
-    bullets: [
-      'Spatial ETL for KECHS: extract, transform, and load housing-society GIS so the inventory was usable, not a pile of files.',
-      'Islamabad e-governance dashboard on smart geotechnologies — a live geographic picture for administration, not another report.',
-      'Georeferencing, raster and vector handling, and spatial analysis in ArcGIS and QGIS.',
-    ],
-    stack: ['QGIS', 'ArcGIS', 'ETL', 'GIS'],
-  },
 ]

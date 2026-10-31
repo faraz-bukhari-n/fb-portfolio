@@ -7,19 +7,11 @@ export const aboutChapters: AboutChapter[] = [
     title: 'Origin',
     yearLabel: '2013–2017',
     location: 'NUST Islamabad',
-    body: 'Bachelors in Geoinformatics Engineering. 3.84 CGPA. Silver medal. The map is the product.',
-  },
-  {
-    id: 'kechs',
-    index: '02',
-    title: 'ETL',
-    yearLabel: '2017–2018',
-    location: 'KECHS, Islamabad',
-    body: 'GIS administrator. Spatial ETL. Islamabad e-governance dashboard on smart geotechnologies.',
+    body: 'Bachelors in Geoinformatics Engineering. 3.84 CGPA. Silver medal. Final year project: Islamabad Dashboard. The map is the product.',
   },
   {
     id: 'engineering',
-    index: '03',
+    index: '02',
     title: 'Engineering',
     yearLabel: '2018–2021',
     location: 'Zameen.com, Lahore',
@@ -27,7 +19,7 @@ export const aboutChapters: AboutChapter[] = [
   },
   {
     id: 'leadership',
-    index: '04',
+    index: '03',
     title: 'Leadership',
     yearLabel: '2018–2021',
     location: 'GIS data team',
@@ -35,7 +27,7 @@ export const aboutChapters: AboutChapter[] = [
   },
   {
     id: 'gis',
-    index: '05',
+    index: '04',
     title: 'WebGIS',
     yearLabel: '2018–2021',
     location: 'PlotFinder · drone · Cesium',
@@ -43,7 +35,7 @@ export const aboutChapters: AboutChapter[] = [
   },
   {
     id: 'lua',
-    index: '06',
+    index: '05',
     title: 'Now',
     yearLabel: '2021–',
     location: 'Ideamappers, Islamabad → Lua Group',

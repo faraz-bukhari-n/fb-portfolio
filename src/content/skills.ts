@@ -141,7 +141,7 @@ export const skills: Skill[] = [
     level: 4,
     years: 8,
     blurb:
-      'Desktop GIS since KECHS: ArcGIS and QGIS for the daily work, ERDAS Imagine when the job is imagery.',
+      'Desktop GIS from Zameen onward: ArcGIS and QGIS for the daily work, ERDAS Imagine when the job is imagery.',
     relatedProjects: ['plotfinder', 'islamabad-dashboard'],
     links: ['fme', 'postgres'],
   },
@@ -390,7 +390,7 @@ export const skills: Skill[] = [
     group: 'webgis',
     level: 4,
     years: 6,
-    blurb: 'Tie scans and imagery to the earth — the first honest coordinate on a lot of the Zameen and KECHS inventory.',
+    blurb: 'Tie scans and imagery to the earth — the first honest coordinate on a lot of the Zameen inventory.',
     relatedProjects: ['plotfinder', 'islamabad-dashboard'],
     links: ['qgis', 'raster'],
   },

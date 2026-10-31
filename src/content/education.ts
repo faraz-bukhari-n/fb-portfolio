@@ -18,6 +18,7 @@ export const education: Education[] = [
       'Image Processing',
       'WebGIS',
       'Integrated GeoTech',
+      'Final year project: Islamabad Dashboard',
     ],
   },
 ]

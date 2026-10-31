@@ -211,14 +211,14 @@ export const projects: Project[] = [
   {
     slug: 'islamabad-dashboard',
     title: 'Islamabad Dashboard',
-    year: '2017–2018',
+    year: '2017',
     featured: false,
-    summary: 'E-governance dashboard for Islamabad using smart geotechnologies.',
-    role: 'GIS administrator · spatial ETL',
-    problem: 'City operations sat in files and silos. Officials needed a live geographic picture, not another report.',
+    summary: 'Final year project at NUST: an e-governance dashboard for Islamabad using smart geotechnologies.',
+    role: 'Final year project · NUST',
+    problem: 'City operations sat in files and silos. The brief was a live geographic picture, not another report.',
     approach:
-      'Implemented an e-governance dashboard on spatial ETL: extract, transform, and load society and city GIS so the map could drive decisions.',
-    outcome: 'A geotech dashboard for Islamabad administration, built while GIS administrator at KECHS.',
+      'Built the dashboard as the Geoinformatics capstone: spatial ETL, extract, transform, and load society and city GIS so the map could drive decisions.',
+    outcome: 'The NUST final year project — the first map product I took to a finish, not a client engagement.',
     stack: ['QGIS', 'ArcGIS', 'ETL', 'GIS'],
     categories: ['gis'],
     architecture: [
